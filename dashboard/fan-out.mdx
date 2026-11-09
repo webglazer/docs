@@ -1,0 +1,71 @@
+---
+title: "Query Fanouts"
+description: "The AI Visibility > Query Fanouts tab: the web searches AI engines ran before answering your prompts, and whether those searches lead to your site."
+icon: "search"
+---
+
+Before an AI engine answers, it often runs its own web searches first. These are called fan-out searches. The **Query Fanouts** tab lists them, so you can write pages that answer the exact searches AI runs.
+
+Open it from **AI Visibility** > **Query Fanouts**.
+
+## Summary
+
+The card at the top shows how many different searches AI ran in the period ("searches AI ran") and a short read of how many of them lead to your site:
+
+- "None of them point to your site yet. Right now AI learns about your world from everyone except you." when no search led to your site.
+- "AI already points to your site on N. The rest are wide open." when under 34% of the searches did.
+- "AI already points to your site on N of them (X%). It clearly sees you as worth quoting." at 34% or more.
+
+How it is counted:
+
+- Searches that differ only in capitals, spacing or a trailing "?", "." or "!" count as one search.
+- A search counts as pointing to your site when at least one answer that ran it cited your own domain.
+- Coverage = searches that point to your site ÷ all different searches × 100, as a whole percent.
+
+<Note>
+**Example with made-up numbers.** AI ran 40 different searches in the period. Answers that ran 9 of them cited your site. Coverage = 9 ÷ 40 × 100 = 22.5%, shown as 23%, so the card reads "AI already points to your site on 9. The rest are wide open."
+</Note>
+
+If your project has no own domain set, the card shows only the count, with no coverage read.
+
+## What AI Adds to Your Prompts
+
+"When AI searches, it throws in extra words you never wrote. Here are the ones it uses most. Put them on a page so AI finds you."
+
+The top 16 words that appear in AI's searches but in none of your tracked prompts, each with how many times a search containing it ran. Short filler words (such as "the", "for", "how") and words under 3 letters are left out.
+
+<Note>
+**Example with made-up numbers.** You track "best CRM for startups". AI searches "best CRM for startups 2026 pricing" 5 times. "2026" is not counted, because a word must start with a letter. "pricing" gets 5.
+</Note>
+
+## What AI searched for
+
+"These are the exact searches AI ran before it answered. Answer one of them on your site and AI can quote you back."
+
+| Column | What it shows |
+| --- | --- |
+| **#** | The row's place in the list. |
+| **Query** | The search text. A green dot means you are cited when AI runs this search. An amber dot means you are not, a gap to win. No dot when your project has no own domain to check. |
+| **Platforms** | The engines that ran this search. |
+| **Times** | How many times the search ran in the period. |
+
+- The default order is most-run first.
+- Click **Query**, **Platforms** or **Times** to sort. Each click cycles ascending, descending, off.
+- **Export** downloads the list as CSV or JSON with Query, Platforms and Times.
+
+### Open the answer behind a search
+
+Click a row to open the prompt detail sheet on **Raw data** for the engine that ran the search. If several engines ran it, the engine logos spread apart: click the one you want. The sheet works for prompts from older runs in the period too. See [Prompts tab](/dashboard/prompts#the-prompt-detail-sheet).
+
+## What counts
+
+Every successful answer from the run's selected engines, over every run in the selected period, with the topic, tag and platform filters applied. Branded prompts are included.
+
+If the tab says "No fan-out searches yet", no answer in the period ran a search. They appear after your next daily run.
+
+Not every engine shares its searches. Google AI Mode never does, so it never appears on this tab, and filtering to Google AI Mode alone shows an empty list. ChatGPT shares its searches on some answers and not others.
+
+<CardGroup cols={2}>
+  <Card title="Citations" href="/metrics/citations">Which sites AI cites.</Card>
+  <Card title="Prompts tab" href="/dashboard/prompts">Read the full answers.</Card>
+</CardGroup>

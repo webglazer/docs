@@ -1,0 +1,126 @@
+---
+title: "Prompts and topics"
+description: "How to add, edit, archive, restore and delete the prompts WebGlazer asks AI engines, and how to group them into topics."
+icon: "message-square-text"
+---
+
+Prompts are the questions WebGlazer asks AI engines for your brand every day. Every number in the dashboard comes from the answers to these prompts, so the prompt list decides what you measure.
+
+## How prompts and topics fit together
+
+- A **prompt** is one question, for example "Best project management tool for small teams?". WebGlazer sends it to each AI engine you track.
+- A **topic** groups related prompts, for example "Pricing comparisons". Topics let you filter the dashboard and see visibility per subject.
+- Each brand (project) has its own prompts and topics.
+
+You manage both on **AI Visibility** > **Prompts**. You need the **Member** or **Company Admin** role to change them. A **Viewer** sees the list but not the edit controls.
+
+## Where your first prompts come from
+
+When you set up a brand, WebGlazer reads your website and suggests the rest:
+
+1. **Topics**: WebGlazer generates topics for your brand. You tick the ones to keep, edit their names, or add your own. The counter shows how many topics your setup allows.
+2. **Prompts**: WebGlazer writes prompts for each kept topic. You review them, edit or remove any, then click **Looks good**.
+
+After setup you add more prompts from the Prompts tab.
+
+## Add prompts
+
+<Steps>
+  <Step title="Open the Prompts tab">
+    Go to **AI Visibility** > **Prompts** and click **Add prompts**.
+  </Step>
+  <Step title="Pick a source">
+    Choose one of three ways:
+    - **Generate with AI**: WebGlazer suggests new prompts. You can pick **Topics (optional)** and fill in **What should we focus on?**, for example "pricing questions, comparisons with other tools". Click **Generate**.
+    - **Manual/CSV**: choose **Type prompts** and enter one prompt per line, or choose **CSV file** and upload a file with a `prompt` column and an optional `topic` column. A file can have up to 1,000 rows. For example:
+
+      ```csv
+      prompt,topic
+      Which CRM works for a 10-person sales team?,CRM for small teams
+      Best CRM with a free plan for startups?,Pricing comparisons
+      ```
+    - **Google Search Console**: WebGlazer finds question-style searches people already make on Google for your site. A **Company Admin** connects Search Console first. Anyone else can upload a Search Console Performance export (CSV or ZIP, up to 20 MB) with **Upload GSC export instead**.
+  </Step>
+  <Step title="Review the list">
+    Every source feeds one review list. Edit the text of any row, give each prompt a topic, or use **Select all**, **Assign topic** and **Remove from review** on several rows at once. Prompts you already track or already archived are skipped and counted at the top.
+  </Step>
+  <Step title="Add them">
+    Click **Add selected**. The footer shows how many slots you have, for example "18 selected · 300 slots available → 282 after adding". If your selection is bigger than your free slots, **Add selected** stays off until you select fewer.
+  </Step>
+</Steps>
+
+New prompts are asked in the next daily run. Until then the Prompts table marks them **Not run yet**.
+
+<Tip>
+  You can close the Add Prompts window while **Generate with AI** is working. The results wait for you when you open it again.
+</Tip>
+
+## Edit a prompt
+
+Open the row menu of a prompt in the **Active** tab and choose **Edit prompt**. You can change the text and the topic, then click **Save**. A prompt cannot be edited into the same text as another prompt you already track or archived.
+
+## Archive and restore prompts
+
+Archiving stops a prompt from running but keeps its past results.
+
+- **Archive one prompt**: row menu > **Archive prompt**.
+- **Archive several**: tick the rows and click **Archive** in the bar that appears.
+- **Free up slots when you are at your limit**: click **Manage prompts**, tick the prompts to stop, then click **Archive N prompts**.
+
+Archived prompts move to the **Archived** tab of the Prompts table. Each row still shows its last result. Click **Restore** (or tick several and click **Restore selected**) to make a prompt Active again. Restoring needs a free slot. If the prompt's topic was archived, choose a new topic first.
+
+## Delete prompts
+
+Deleting is only possible from the **Archived** tab. Click **Delete** on a row, or tick several and click **Delete selected**.
+
+<Warning>
+  Delete has no confirmation step and cannot be undone. It erases the prompt and all of its results, so your past numbers are recalculated without it. Adding the same text again later starts a new prompt with no history. If a run that asked the prompt is still saving answers, wait until it finishes.
+</Warning>
+
+## Manage topics
+
+On a wide screen the topic list sits left of the Prompts table. On a smaller screen click **Manage topics** to open it.
+
+- **All topics** shows every Active prompt. Click a topic to filter the table to it.
+- **Add topic**: enter a **Topic name** and click **Add topic**. If a topic with that name is archived, you are offered **Restore** instead.
+- **Rename**: click the edit icon next to a topic, change the name and click **Save**. The prompts stay in the topic.
+- **Remove**: click the remove icon. The prompts and their history stay. If the topic still has Active prompts, choose where they go under **Move prompts to** and click **Move prompts and remove**.
+
+## How many prompts you can track
+
+Your plan sets how many Active prompts your account can track at once. All brands on the account share this one pool. Archived prompts do not count.
+
+| Plan | Active prompts included |
+| --- | --- |
+| Basic | 50 |
+| Standard | 100 |
+| Advanced | 200 |
+
+You can buy more prompts as an add-on in **Settings** > **Billing & plan**. Agency plans count daily credits instead of prompts: each prompt uses one credit per AI engine every day. See [Agency accounts](/setup/agencies).
+
+With the add-on, Basic goes up to 200, Standard up to 250 and Advanced up to 350, in steps of 50.
+
+The Prompts table shows your current use as "used / allowance" next to **Add prompts**. At the limit, the button turns into **Upgrade plan** and **Manage prompts**. On an agency plan the count is in daily credits instead, for example "120 of 464 daily credits used", and you reach the limit when your daily credits are fully committed.
+
+## Write prompts that measure something useful
+
+These tips follow from how WebGlazer asks your prompts and counts the answers.
+
+- **Ask like a buyer would.** AI engines answer the whole question, not keywords. "Which CRM works for a 10-person sales team?" tells you more than "CRM software".
+- **Leave your brand name out of most prompts.** A prompt that names your brand is marked as branded. It shows how AI describes you, but it cannot show whether AI recommends you on its own. The [To-do list](/dashboard/todo) counts only prompts that do not name your brand.
+- **Cover the whole buying journey.** In **Settings** > **Brand profile**, the **Question mix** sets how often new AI-generated prompts are about **Learning**, **Comparing** or **Buying**. It applies to prompts you add from then on. Prompts you already track stay as they are.
+- **Check your market and language.** Most engines are asked from the country set under **Settings** > **Brand profile** > **Market and language**, and Google AI Mode also gets the language. Write prompts in the language your buyers use there.
+- **One idea per prompt.** Two prompts that ask the same thing in different words give you near-identical answers and use two slots.
+- **Use topics as your reporting groups.** Put prompts in the topic you want to read results for, since the dashboard filters by topic.
+- **Keep personal data out.** Prompts are sent to third-party AI services, so never include names, emails or other personal or sensitive data.
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Competitors" icon="users" href="/setup/competitors">
+    Choose which brands you are compared with.
+  </Card>
+  <Card title="Engines and schedule" icon="calendar-clock" href="/setup/engines-and-schedule">
+    Pick the AI engines and see when runs happen.
+  </Card>
+</CardGroup>

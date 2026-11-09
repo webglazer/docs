@@ -1,0 +1,95 @@
+---
+title: "Engines and schedule"
+description: "Which AI engines WebGlazer can track, how to choose them, how often runs happen, how to set the time zone, and how to follow a run."
+icon: "calendar-clock"
+---
+
+WebGlazer asks your prompts to a set of AI engines once a day and records every answer. This page explains which engines you can track, when runs happen and how to follow one.
+
+## Engines you can track
+
+| Engine | Notes |
+| --- | --- |
+| ChatGPT | |
+| Perplexity | |
+| Google AI Mode | Can be slower than the others, so its results may arrive later or partly. |
+| Gemini | |
+| Copilot | |
+
+Most engines are asked from the country set in **Settings** > **Brand profile** > **Market and language**, when that engine supports the country. Google AI Mode also gets the language.
+
+## How many engines your plan includes
+
+| Plan | Engines |
+| --- | --- |
+| Basic | Choose 3 of 5 |
+| Standard, Advanced | All 5, always on |
+| Agency Basic, Agency Plus, Agency Max | Choose 1 to 5 |
+
+On plans that include all 5, every run uses all of them and there is nothing to choose. On agency plans each engine you turn on uses daily credits, so the choice affects how many prompts you can run. See [Agency accounts](/setup/agencies).
+
+## Choose your engines
+
+You choose engines when you set up a brand. On Standard and Advanced every engine always runs, so there is nothing to change. On Basic and agency plans, change them later like this:
+
+<Steps>
+  <Step title="Open Projects">
+    Go to **Settings** > **Projects**.
+  </Step>
+  <Step title="Open Tracking setup">
+    Click the engines in the brand's **AI engines** column, or open the row menu and choose **Tracking setup**.
+  </Step>
+  <Step title="Switch engines on or off">
+    Under **AI engines**, switch each engine on or off. The counter shows how many you selected out of your plan's limit. The **Summary** on the right shows **Active prompts**, what is left in your plan, the engines and **Frequency**.
+  </Step>
+  <Step title="Save">
+    Click **Update**. You need at least 1 engine. On an agency plan, **Update** stays off if the change needs more daily credits than you have left.
+  </Step>
+</Steps>
+
+You need the **Member** or **Company Admin** role to change engines. A change applies from the next run.
+
+## How often runs happen
+
+Every brand runs once a day. In **Settings** > **Projects**, the **Frequency** column shows **Daily**. You do not start runs yourself: the daily run asks every Active prompt to every engine you track.
+
+The first run of a new account starts when you finish setup. After that, runs repeat every day at the same local time:
+
+- Your first brand runs every day at the time of day you created it, in your browser's time zone at that moment.
+- A brand you add later copies the run time and time zone of your newest other brand.
+- The dashboard does not show the time of day, and you cannot change it. You can change the time zone, as shown below.
+
+## Set the time zone
+
+The time zone decides which calendar day a run belongs to and the local time it runs at. Each brand has its own.
+
+<Steps>
+  <Step title="Open Edit details">
+    Go to **Settings** > **Projects**, open the brand's row menu and choose **Edit details**.
+  </Step>
+  <Step title="Pick a time zone">
+    Choose a value under **Time zone**. The same dialog also holds the brand's **Market** and **Language**.
+  </Step>
+  <Step title="Save">
+    Click **Update**. A "Project updated" message confirms it.
+  </Step>
+</Steps>
+
+Only a **Company Admin** can change the time zone. When you change it, the run keeps the same local time of day in the new zone.
+
+## Follow a run
+
+When your first run starts at the end of setup, the **Run Progress** window opens over the Overview. It shows one ring per engine that fills as answers arrive, and the step each engine is on. If an engine fails or is delayed, a summary under the rings says which engine and on how many prompts. You can close the window at any time; the run keeps going. The window opens only for this first run.
+
+If the latest run is not finished or failed, the dashboard keeps showing your last completed results and a banner says so.
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Prompts and topics" icon="message-square-text" href="/setup/prompts-and-topics">
+    Add the questions each engine is asked.
+  </Card>
+  <Card title="Agency accounts" icon="briefcase" href="/setup/agencies">
+    How daily credits work across clients and pitches.
+  </Card>
+</CardGroup>

@@ -1,0 +1,102 @@
+---
+title: "Core concepts"
+description: "Plain definitions of brand, project, prompt, topic, AI engine, run, competitor and credits in WebGlazer."
+icon: "book-open"
+---
+
+WebGlazer uses a small set of words across the dashboard. This page explains each one so you can read your results and set up tracking with confidence.
+
+## Brand (project)
+
+A brand is one website you track, such as your company or one of your clients. In **Settings** the same thing is called a **Project**. In these docs, brand and project mean the same thing.
+
+Each brand has its own website, market and language, prompts, topics, competitors and results. Switch between brands with the brand switcher in the sidebar. Add another one with **Add new brand** (agencies see **Add new client**), if your plan has room.
+
+How many brands you can track depends on your plan. See [Plans and billing](/account/plans-and-billing) and [Brands](/setup/brands).
+
+## Prompt
+
+A prompt is one question WebGlazer asks the AI engines on your behalf, written the way a buyer would ask it. For example: "What is the best project management tool for small agencies?"
+
+Prompts have two states:
+
+- **Active**: tracked in every run and counted against your plan's prompt limit.
+- **Archived**: no longer tracked. You can restore an archived prompt, or delete it for good.
+
+Most prompts do not name your brand, so they show whether AI suggests you on its own. Prompts that name your brand are branded prompts. Branded prompts count in some numbers and not in others:
+
+| Number | Branded prompts counted? |
+| --- | --- |
+| [Visibility](/metrics/visibility), [Share of Voice](/metrics/share-of-voice), [Mention order](/metrics/mention-order) | No |
+| [Sentiment](/metrics/sentiment) | Yes |
+| [Citations](/metrics/citations): **Times linked** and **Reach** | Yes |
+| [Query Fanouts](/dashboard/fan-out) | Yes |
+| Which sources are qualifying, and [Opportunities](/dashboard/opportunities) | No |
+
+See [Prompts and topics](/setup/prompts-and-topics).
+
+## Topic
+
+A topic is a group of related prompts, such as one product line or one buyer need. Topics let you filter results and see which subjects you are strong or weak in.
+
+During setup WebGlazer suggests topics from your brand profile and writes prompts for each one. You can add, rename and remove topics later on the **AI Visibility** > **Prompts** page. Removing a topic keeps its prompts and their history.
+
+## AI engine
+
+An AI engine is one AI assistant WebGlazer asks your prompts. The dashboard also calls them platforms or models. WebGlazer tracks five:
+
+- ChatGPT
+- Perplexity
+- Google AI Mode
+- Gemini
+- Copilot
+
+WebGlazer asks each AI engine your prompts every day and records the answers. Your plan sets how many engines you can track. See [Engines and schedule](/setup/engines-and-schedule).
+
+## Run
+
+A run is one round of asking every active prompt on every engine you track, then reading the answers. Each run is a snapshot of how AI talked about you that day. You do not start runs yourself: they happen on a daily schedule.
+
+- Your first run starts when you finish setup.
+- After that, each brand runs once a day, at the same local time.
+- Your first brand runs at the time of day you created it, in your browser's time zone. A brand you add later copies the run time and time zone of your newest other brand.
+- The dashboard does not show this time of day, and you cannot change it. You can change the time zone, per brand, in **Settings** > **Projects**, in the row menu under **Edit details**. Only a Company Admin can do this.
+
+The dashboard shows results by date, so you can compare days and see what changed. See [Engines and schedule](/setup/engines-and-schedule).
+
+## Competitor
+
+A competitor is another brand you want to compare yourself with. WebGlazer checks every answer for your brand and your competitors, so you can see who AI names instead of you.
+
+You add competitors during setup under **Who you compete with**, and later in **Settings** > **Brands**. WebGlazer also lists **Brand suggestions**: brands AI named in your answers that you do not track yet. Accept a suggestion to start tracking it. See [Competitors](/setup/competitors).
+
+Only your own brand and the competitors you track count in competitor numbers: **Rankings**, Share of Voice, the brand lists on the **Prompts** and **Visibility** tabs, and topic rankings. A brand AI names that you do not track is left out of all of them, including the Share of Voice total. Accepting it from **Brand suggestions** is what makes it count.
+
+## Credits (agency plans)
+
+Agency plans measure usage in credits instead of a prompt limit. One credit covers one prompt answered by one AI engine on one day. For example, 10 prompts on 3 engines use 30 credits a day.
+
+- Credits come as a monthly allowance shared across all your client and pitch projects.
+- Your daily credits are your monthly credits divided by 31, rounded down. See [Agencies](/setup/agencies#daily-credits).
+- The sidebar shows **Credits** with what is left this month.
+- When you choose engines, the dashboard shows how many daily credits that choice uses.
+- If you run out, runs pause until your credits reset for the next month.
+
+Brand plans (Basic, Standard, Advanced) do not use credits. They have a daily prompt limit instead. See [Agencies](/setup/agencies).
+
+## Roles
+
+Each person in your company has a role: **Company Admin**, **Member** or **Viewer**. Only a Company Admin can change billing, the market and language, or the time zone. Viewers can read results but not change setup. See [Team](/setup/team).
+
+## Client and pitch projects (agency plans)
+
+On an agency plan, every project is a client or a pitch. A client project is tracked every day for as long as you work with that client. A pitch project is a short 7-day project for a prospect, which you can convert to a client when they sign. See [Agencies](/setup/agencies).
+
+<CardGroup cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Set up tracking step by step.
+  </Card>
+  <Card title="Visibility" icon="eye" href="/metrics/visibility">
+    How often AI names your brand.
+  </Card>
+</CardGroup>

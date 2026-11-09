@@ -1,0 +1,84 @@
+---
+title: "Competitors"
+description: "How WebGlazer finds competitor brands, how to add, accept, remove and restore them, and where they show up in the dashboard."
+icon: "users"
+---
+
+Competitors give your numbers context. 15% visibility means more when you can see a rival at 45% on the same prompts. WebGlazer compares your brand with the competitors you track on every chart and ranking.
+
+## Where you manage competitors
+
+Go to **Settings** > **Brands**. The page has two parts:
+
+- **Your brands**: a table of your own brand, marked **You**, and every competitor you track. Columns are **Brand**, **Domain** and **Mentions**. Mentions counts how often AI answers named the brand in the last 7 days.
+- **Brand suggestions**: a list on the right (below the table on small screens) of brands AI named in your answers that you do not track yet.
+
+The **Brands** item in the settings menu shows how many suggestions are waiting.
+
+You need the **Member** or **Company Admin** role to add competitors and to accept or reject suggestions. A **Viewer** sees **Brand suggestions** read-only. A Viewer can still use **Remove brand**, but it only hides the brand from that Viewer's own dashboard.
+
+Only your own brand and the competitors you track count in **Rankings**, Share of Voice, mention order lists and topic rankings. A brand AI names that you do not track is left out of all of them until you add it or accept it here.
+
+## How competitors are found
+
+1. **During brand setup.** On the **Brand understanding** step WebGlazer proposes competitors from your website. You can remove them or add your own before you continue. If no confident match is found, the step says so and you can add them by hand.
+2. **From your answers.** After each run, WebGlazer collects every brand the AI engines named in answers to your prompts. Brands you do not track yet appear under **Brand suggestions**, most mentioned first, with their mention count.
+
+There is no limit on how many competitors a brand can track.
+
+## Accept or reject a suggestion
+
+In **Brand suggestions**, each card has two buttons:
+
+- **Accept** (check mark): the brand joins your tracked list. It is tracked by name with no domain, so its **Domain** column stays empty.
+- **Reject** (cross): the brand is removed from suggestions and is not suggested again.
+
+The list shows 20 suggestions at a time. Click **Show more** to see the next ones.
+
+## Add a competitor by hand
+
+<Steps>
+  <Step title="Open the dialog">
+    In **Settings** > **Brands**, click **Add brand**.
+  </Step>
+  <Step title="Enter the brand">
+    Fill in **Domain**, for example `acme.com`. **Brand name** is optional and lets you set the name to match; without it, WebGlazer uses a name based on the domain.
+  </Step>
+  <Step title="Save">
+    Click **Add brand**. The brand is tracked from your next run, so it appears in the table and charts after that run finishes.
+  </Step>
+</Steps>
+
+## Remove and restore a competitor
+
+Open the row menu of a competitor and choose **Remove brand**. What happens depends on your role:
+
+- **Member or Company Admin**: the competitor comes off the project's tracked list for everyone. You see "We stopped tracking ... and took it off your list." It no longer counts in anyone's numbers, even if a later run names it.
+- **Viewer**: the brand is hidden from your own dashboard only. You see "... was removed from your dashboard." Other people still see it.
+
+To bring a brand back, turn on **Show hidden** above the table. Removed, hidden and rejected brands appear there grayed out. Each row has one of two actions:
+
+- **Restore**: for a brand you hid yourself. It comes back on your dashboard.
+- **Track again**: for a brand that was taken off the tracked list or rejected from suggestions. It goes back on the list and counts again for everyone. Members and Company Admins can do this.
+
+Your own brand cannot be removed from this table.
+
+## Where competitors show up
+
+- **Overview**: the **Rankings** table and the **Visibility Over Time** chart compare your brand with each tracked competitor.
+- **AI Visibility**: visibility, share of voice and mention order are shown for you and your tracked competitors. Sentiment is scored for your own brand only.
+- **To-do list and Opportunities**: each source gap lists the competitors that AI mentioned there instead of you, under "Mentioned here instead".
+- **Settings** > **Brands**: mention counts for the last 7 days.
+
+When there is no run in the last 7 days, the table cannot show mentions. You still see your tracked list with **Add brand** and **Remove**, so you can set up competitors before the first run.
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Prompts and topics" icon="message-square-text" href="/setup/prompts-and-topics">
+    Decide which questions AI is asked.
+  </Card>
+  <Card title="To-do list" icon="list-checks" href="/dashboard/todo">
+    Act on the sources where competitors appear and you do not.
+  </Card>
+</CardGroup>

@@ -1,0 +1,41 @@
+---
+title: "Platforms tab"
+description: "The AI Visibility > Platforms tab: each AI engine side by side with your visibility, mention order, sentiment and citations."
+icon: "boxes"
+---
+
+The **Platforms** tab compares the AI engines you track. It answers: which engine mentions me most, which names me earliest, which likes me best, and which reads the most sources?
+
+Open it from **AI Visibility** > **Platforms**.
+
+## How each engine treats you
+
+"Every AI engine side by side: how often it mentions you, how early it names you when it does, how it feels about you, and how many sources it pulls."
+
+One row per engine your project tracks.
+
+| Column | What it shows |
+| --- | --- |
+| **Engine** | The engine's name and logo, for example ChatGPT or Google AI Mode. |
+| **Visibility** | Share of this engine's answers that name you, with a bar. See [Visibility](/metrics/visibility). |
+| **Mention order** | Average place where this engine first names you in its answers. See [Mention order](/metrics/mention-order). |
+| **Sentiment** | This engine's sentiment score for you, 0 to 100, with a bar split into positive, neutral and negative answers. See [Sentiment](/metrics/sentiment). |
+| **Citations** | Times linked: how many times this engine's answers linked to a source. See [Citations](/metrics/citations). |
+
+## How the numbers work
+
+- Each engine stands alone. Its visibility divides only by the answers that engine returned successfully. An engine that answered 1 prompt and named you reads 100%.
+- Visibility and mention order count non-branded prompts only. Sentiment and **Citations** include branded prompts. So an engine can have a sentiment score while its visibility is empty.
+- All numbers cover every run in the selected date range, with the topic and tag filters applied.
+- The default order is highest visibility first. Engines with no visibility rate go last.
+- Click **Visibility**, **Mention order**, **Sentiment** or **Citations** to sort. Each click cycles ascending, descending, off, and you can stack sorts. Engines with no data always sort to the bottom.
+- A dash means the engine has no data for that column in the view.
+
+Use the **Platforms** filter in the filter bar to hide engines you do not want to compare.
+
+If the tab says "No platform data yet", it fills in after your next daily run. "No runs match your filters." means no run falls inside the filters.
+
+<CardGroup cols={2}>
+  <Card title="Engines and schedule" href="/setup/engines-and-schedule">Choose which engines to track.</Card>
+  <Card title="Visibility" href="/metrics/visibility">How visibility is calculated.</Card>
+</CardGroup>

@@ -1,0 +1,58 @@
+---
+title: "Mention order"
+description: "Where AI first names your brand among the brands in an answer, averaged over your answers."
+icon: "list-ordered"
+---
+
+Mention order is the average place where AI first names your brand among all the brands in an answer. 1 means AI named you first. Lower is better.
+
+## What it measures
+
+Being named is good. Being named first is better, because readers often stop at the first option. Mention order tells you how early you show up in the answers that do mention you.
+
+In some places the same number is labeled **Position** (the stats line above the **Prompts** table). It is the same metric.
+
+## How it is calculated
+
+For each answer, an AI model reads the answer and gives each brand it names a place: 1 for the first brand named, 2 for the second, and so on. Your brand's place in that answer is its place in this list.
+
+Every brand in the answer takes a place, including brands you do not track. So you can read 2.0 while the brand ahead of you is not in your **Rankings**.
+
+Mention order = sum of your places ÷ number of answers that gave you a place, rounded half up to one decimal (for example 1.8).
+
+- Only answers that name you count. An answer that does not name you adds nothing, so Mention order never punishes you for being absent. Read it next to [Visibility](/metrics/visibility).
+- Only successful answers from the run's selected engines, to non-branded prompts.
+- Every run in the selected date range is pooled, then divided once.
+- If you merged a brand into your own, the earlier of the two places counts for that answer.
+
+<Note>
+**Example with made-up numbers.** Your brand is named in 4 answers. It comes 1st, 3rd, 1st and 2nd. Mention order = (1 + 3 + 1 + 2) ÷ 4 = 1.75, shown as 1.8.
+</Note>
+
+Competitors get a Mention order by the same rule.
+
+## Where you see it
+
+- **Overview** > **Rankings**: the **Mention order** column.
+- **AI Visibility** > **Visibility** tab: the **Mention order** line in the **Visibility Score** chart. The chart flips this line so up always means better.
+- **AI Visibility** > **Prompts** tab: the **Position** figure above the table and the **Mention order** column per prompt.
+- **AI Visibility** > **Platforms** tab: the **Mention order** column, one row per engine.
+- The prompt detail sheet: the **Mention order** card and the **Mention order** column of **Top Brands**.
+
+## How to read it
+
+- 1.0 means AI named you first every time it named you.
+- A dash means no answer in the view gave you a place.
+- The change chip compares with the previous period of the same length. A lower number is an improvement, so a negative change shows as good.
+- Mention order is not the same as **Rank** (the # column in **Rankings**). Rank orders brands against each other, mostly by visibility. Mention order is where you appear inside each answer.
+
+## What moves it
+
+- Being the brand that sources describe first, for example the top pick on comparison and review pages AI cites.
+- Clear category pages that answer the prompt directly, so AI reaches for your brand first.
+- Check the **Mention order** column on the **Platforms** tab to see which engine names you latest.
+
+<CardGroup cols={2}>
+  <Card title="Visibility" href="/metrics/visibility">How often AI names you.</Card>
+  <Card title="Platforms" href="/dashboard/platforms">Mention order per engine.</Card>
+</CardGroup>
