@@ -19,9 +19,9 @@ Reference sites: https://cloro.dev/docs (layout, landing cards, quickstart shape
 - American spelling in prose (color, analyze, organize). Quote UI labels exactly, even when the UI uses British spelling (for example **Uncategorised**, "Analysing competitors & sentiment").
 
 ## Page shape
-- Frontmatter: `title` (plain, under 60 chars), `description` (one sentence, what the page answers; it becomes the llms.txt line), optional `icon` (Lucide name).
+- Frontmatter: `title` (plain, under 60 chars), `description` (one sentence, what the page answers; it becomes the llms.txt line), optional `icon` (Lucide name), and `related` (the 3 most useful next pages as root-relative paths; Mintlify shows them as **Related topics** at the bottom of the page).
 - Open with 1 to 2 sentences saying what this is and why it matters.
-- Then sections with `##` headings. Use `<Steps>` for procedures, `<Note>`/`<Tip>`/`<Warning>` sparingly, `<CardGroup>` for "next" links at the end.
+- Then sections with `##` headings. Use `<Steps>` for procedures, `<Note>`/`<Tip>`/`<Warning>` sparingly, tables when the reader compares items (plans, roles, metrics), and a small Mermaid flowchart only for a real flow (copy the neutral `%%{init}%%` theme line from `concepts.mdx`). Do not end a page with a `<CardGroup>` of next links: `related` and the Previous/Next pagination cover that.
 - Metric pages: What it measures, How it is calculated (from pipeline code, in plain words), Where you see it, How to read it, What moves it.
 - Internal links are root-relative without extension: `/metrics/visibility`.
 - No screenshots yet (none exist). Do not reference images that are not in the repo.

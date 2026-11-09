@@ -2,6 +2,10 @@
 title: "Core concepts"
 description: "Plain definitions of brand, project, prompt, topic, AI engine, run, competitor and credits in WebGlazer."
 icon: "book-open"
+related:
+  - /quickstart
+  - /metrics/visibility
+  - /setup/prompts-and-topics
 ---
 
 WebGlazer uses a small set of words across the dashboard. This page explains each one so you can read your results and set up tracking with confidence.
@@ -57,12 +61,33 @@ WebGlazer asks each AI engine your prompts every day and records the answers. Yo
 
 A run is one round of asking every active prompt on every engine you track, then reading the answers. Each run is a snapshot of how AI talked about you that day. You do not start runs yourself: they happen on a daily schedule.
 
+```mermaid actions={false}
+%%{init: {'theme': 'base', 'flowchart': {'wrappingWidth': 460, 'rankSpacing': 28, 'nodeSpacing': 24, 'padding': 10}, 'themeVariables': {'fontFamily': 'Geist, sans-serif', 'fontSize': '14px', 'primaryColor': '#F5F5F5', 'primaryTextColor': '#0A0A0A', 'primaryBorderColor': '#E5E5E5', 'lineColor': '#737373', 'clusterBkg': '#FFFFFF', 'clusterBorder': '#E5E5E5'}}}%%
+flowchart TB
+    A["Your active prompts"] --> B["Asked on every engine you track"]
+    B --> C["AI answers"]
+    C --> D["Each answer is read: brands named, their order, quotes about you, pages cited"]
+    D --> E["Your metrics: Visibility, Share of Voice, Mention order, Sentiment, Citations"]
+```
+
 - Your first run starts when you finish setup.
 - After that, each brand runs once a day, at the same local time.
 - Your first brand runs at the time of day you created it, in your browser's time zone. A brand you add later copies the run time and time zone of your newest other brand.
 - The dashboard does not show this time of day, and you cannot change it. You can change the time zone, per brand, in **Settings** > **Projects**, in the row menu under **Edit details**. Only a Company Admin can do this.
 
 The dashboard shows results by date, so you can compare days and see what changed. See [Engines and schedule](/setup/engines-and-schedule).
+
+## Metrics at a glance
+
+Your results come down to five metrics. Each one answers a different question about how AI talks about you.
+
+| Metric | Question it answers | Range | Main place to see it |
+| --- | --- | --- | --- |
+| [Visibility](/metrics/visibility) | How often does AI name my brand? | 0 to 100%, higher is better | **AI Visibility** > **Visibility** |
+| [Share of Voice](/metrics/share-of-voice) | Of the mentions of my brand and tracked competitors, how much is mine? | 0 to 100%, higher is better | **Overview** > **Rankings** |
+| [Mention order](/metrics/mention-order) | How early in the answer does AI name me? | 1 and up, lower is better (1 = named first) | **Overview** > **Rankings** |
+| [Sentiment](/metrics/sentiment) | How well does AI speak about me? | 0 to 100, higher is better | **AI Visibility** > **Sentiment** |
+| [Citations](/metrics/citations) | Which websites does AI use, and do they mention me? | **Times linked** (a count) and **Reach** (0 to 100%) | **AI Visibility** > **Citations** |
 
 ## Competitor
 
@@ -91,12 +116,3 @@ Each person in your company has a role: **Company Admin**, **Member** or **Viewe
 ## Client and pitch projects (agency plans)
 
 On an agency plan, every project is a client or a pitch. A client project is tracked every day for as long as you work with that client. A pitch project is a short 7-day project for a prospect, which you can convert to a client when they sign. See [Agencies](/setup/agencies).
-
-<CardGroup cols={2}>
-  <Card title="Quickstart" icon="rocket" href="/quickstart">
-    Set up tracking step by step.
-  </Card>
-  <Card title="Visibility" icon="eye" href="/metrics/visibility">
-    How often AI names your brand.
-  </Card>
-</CardGroup>

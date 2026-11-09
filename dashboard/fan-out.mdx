@@ -2,6 +2,10 @@
 title: "Query Fanouts"
 description: "The AI Visibility > Query Fanouts tab: the web searches AI engines ran before answering your prompts, and whether those searches lead to your site."
 icon: "search"
+related:
+  - /metrics/citations
+  - /dashboard/prompts
+  - /dashboard/citations
 ---
 
 Before an AI engine answers, it often runs its own web searches first. These are called fan-out searches. The **Query Fanouts** tab lists them, so you can write pages that answer the exact searches AI runs.
@@ -64,8 +68,3 @@ Every successful answer from the run's selected engines, over every run in the s
 If the tab says "No fan-out searches yet", no answer in the period ran a search. They appear after your next daily run.
 
 Not every engine shares its searches. Google AI Mode never does, so it never appears on this tab, and filtering to Google AI Mode alone shows an empty list. ChatGPT shares its searches on some answers and not others.
-
-<CardGroup cols={2}>
-  <Card title="Citations" href="/metrics/citations">Which sites AI cites.</Card>
-  <Card title="Prompts tab" href="/dashboard/prompts">Read the full answers.</Card>
-</CardGroup>
