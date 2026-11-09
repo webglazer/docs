@@ -21,15 +21,13 @@ Your first run starts as soon as you finish setup. The engines usually answer wi
 
 The whole flow at a glance:
 
-```mermaid actions={false}
-%%{init: {'theme': 'base', 'flowchart': {'wrappingWidth': 460, 'rankSpacing': 28, 'nodeSpacing': 24, 'padding': 10}, 'themeVariables': {'fontFamily': 'Geist, sans-serif', 'fontSize': '14px', 'primaryColor': '#F5F5F5', 'primaryTextColor': '#0A0A0A', 'primaryBorderColor': '#E5E5E5', 'lineColor': '#737373'}}}%%
-flowchart TB
-    A["Create your account"] --> B["Steps 1 to 4: project details, brand, topics, prompts"]
-    B --> C["Step 5: choose a plan in Stripe"]
-    C --> D["Pick your engines and invite your team"]
-    D --> E["First run: about 4 to 6 minutes"]
-    E --> F["Results on the Overview"]
-```
+| Stage | What happens |
+| --- | --- |
+| Create your account | Sign up with Google or with email and a password. |
+| Steps 1 to 4 | Project details, brand, topics and prompts. |
+| Step 5 | Choose a plan in Stripe. |
+| After checkout | Pick your engines and invite your team. |
+| First run | About 4 to 6 minutes, then your results are on the Overview. |
 
 <Steps>
   <Step title="Create your account">
@@ -48,6 +46,10 @@ flowchart TB
     - **Market** and **Language**: where your buyers are and the language they search in. WebGlazer may suggest these from your website. Click **Use this** to accept the suggestion.
 
     Click **Next**. WebGlazer creates your project and starts reading your website.
+
+    <Frame caption="Illustration with sample data">
+      <img src="/images/dashboard/mock-onboarding-project-details.webp" alt="Setup wizard step 1, Brand setup, with Website URL, Brand name, Market and Language" />
+    </Frame>
   </Step>
   <Step title="Step 2: Brand understanding">
     WebGlazer reads your site and fills in your **Brand profile**. Check and edit each part:
@@ -97,6 +99,10 @@ flowchart TB
   <Step title="Read your results on the Overview">
     When the run finishes, the **Overview** shows **Visibility Over Time** and the **Rankings** table, which compares your brand with your competitors on visibility, sentiment and mention order.
 
+    <Frame caption="Illustration with sample data">
+      <img src="/images/dashboard/mock-rankings.webp" alt="Rankings table on the Overview after the first run" />
+    </Frame>
+
     See [Overview](/dashboard/overview) for how to read each part.
   </Step>
 </Steps>
@@ -110,3 +116,20 @@ After the first run, WebGlazer asks the AI engines your prompts once a day for e
 1. Go to **Settings** > **Brands** and accept the competitors you want to compare with from **Brand suggestions**. Only your own brand and the competitors you track count in **Rankings**, Share of Voice and the other competitor numbers. A brand AI names that you have not accepted is left out. See [Competitors](/setup/competitors).
 2. Open **AI Visibility** > **Prompts** to see each answer and where your brand appears.
 3. Invite colleagues from **Settings** > **Members**.
+
+## Next steps
+
+<CardGroup cols={1}>
+  <Card title="Core concepts" icon="book-open" href="/concepts" horizontal>
+    Brands, prompts, topics, engines, runs and credits in plain words.
+  </Card>
+  <Card title="Write better prompts" icon="message-square-text" href="/setup/prompts-and-topics" horizontal>
+    Pick the prompts and topics that measure something useful.
+  </Card>
+  <Card title="Read the Overview" icon="layout-dashboard" href="/dashboard/overview" horizontal>
+    Visibility Over Time and Rankings, part by part.
+  </Card>
+  <Card title="Connect your AI agent" icon="plug" href="/integrations/mcp" horizontal>
+    Let Claude, Cursor or another MCP client read your WebGlazer data.
+  </Card>
+</CardGroup>

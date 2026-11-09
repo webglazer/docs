@@ -5,7 +5,7 @@
   "description": "WebGlazer tracks how AI engines (ChatGPT, Perplexity, Google AI Mode, Gemini and Copilot) talk about your brand. These docs explain how to set up tracking, read every dashboard metric, and connect your own AI agent through the WebGlazer MCP server.",
   "colors": {
     "primary": "#0A0A0A",
-    "light": "#FAFAFA",
+    "light": "#00BCFF",
     "dark": "#0A0A0A"
   },
   "favicon": "/favicon.svg",

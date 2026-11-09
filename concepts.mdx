@@ -60,14 +60,20 @@ WebGlazer asks each AI engine your prompts every day and records the answers. Yo
 
 A run is one round of asking every active prompt on every engine you track, then reading the answers. Each run is a snapshot of how AI talked about you that day. You do not start runs yourself: they happen on a daily schedule.
 
-```mermaid actions={false}
-%%{init: {'theme': 'base', 'flowchart': {'wrappingWidth': 460, 'rankSpacing': 28, 'nodeSpacing': 24, 'padding': 10}, 'themeVariables': {'fontFamily': 'Geist, sans-serif', 'fontSize': '14px', 'primaryColor': '#F5F5F5', 'primaryTextColor': '#0A0A0A', 'primaryBorderColor': '#E5E5E5', 'lineColor': '#737373', 'clusterBkg': '#FFFFFF', 'clusterBorder': '#E5E5E5'}}}%%
-flowchart TB
-    A["Your active prompts"] --> B["Asked on every engine you track"]
-    B --> C["AI answers"]
-    C --> D["Each answer is read: brands named, their order, quotes about you, pages cited"]
-    D --> E["Your metrics: Visibility, Share of Voice, Mention order, Sentiment, Citations"]
-```
+<Steps>
+  <Step title="Your active prompts">
+    Every prompt you track that is not archived.
+  </Step>
+  <Step title="Asked on every engine you track">
+    Each prompt goes to each AI engine in your plan.
+  </Step>
+  <Step title="Each answer is read">
+    WebGlazer records the brands named, their order, quotes about you and the pages cited.
+  </Step>
+  <Step title="Your metrics update">
+    Visibility, Share of Voice, Mention order, Sentiment and Citations.
+  </Step>
+</Steps>
 
 - Your first run starts when you finish setup.
 - After that, each brand runs once a day, at the same local time.
@@ -115,3 +121,20 @@ Each person in your company has a role: **Company Admin**, **Member** or **Viewe
 ## Client and pitch projects (agency plans)
 
 On an agency plan, every project is a client or a pitch. A client project is tracked every day for as long as you work with that client. A pitch project is a short 7-day project for a prospect, which you can convert to a client when they sign. See [Agencies](/setup/agencies).
+
+## Next steps
+
+<CardGroup cols={1}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart" horizontal>
+    Go from sign up to your first results.
+  </Card>
+  <Card title="Visibility" icon="eye" href="/metrics/visibility" horizontal>
+    How often AI names your brand, and how it is calculated.
+  </Card>
+  <Card title="Prompts and topics" icon="message-square-text" href="/setup/prompts-and-topics" horizontal>
+    Add, edit and archive the questions WebGlazer asks.
+  </Card>
+  <Card title="Competitors" icon="users" href="/setup/competitors" horizontal>
+    Choose the brands you compare yourself with.
+  </Card>
+</CardGroup>
