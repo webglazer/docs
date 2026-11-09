@@ -17,6 +17,10 @@
   "fonts": {
     "family": "Geist"
   },
+  "appearance": {
+    "default": "light",
+    "strict": true
+  },
   "icons": {
     "library": "lucide"
   },
@@ -25,6 +29,14 @@
       {
         "label": "Pricing",
         "href": "https://webglazer.com/pricing"
+      },
+      {
+        "label": "Blog",
+        "href": "https://webglazer.com/blog"
+      },
+      {
+        "label": "FAQ",
+        "href": "https://webglazer.com/faq"
       },
       {
         "label": "Support",
