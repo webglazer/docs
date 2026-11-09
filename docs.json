@@ -1,53 +1,181 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "luma",
   "name": "WebGlazer Docs",
   "description": "WebGlazer tracks how AI engines (ChatGPT, Perplexity, Google AI Mode, Gemini and Copilot) talk about your brand. These docs explain how to set up tracking, read every dashboard metric, and connect your own AI agent through the WebGlazer MCP server.",
   "colors": {
     "primary": "#0A0A0A",
-    "light": "#FFFFFF",
+    "light": "#FAFAFA",
     "dark": "#0A0A0A"
+  },
+  "favicon": "/favicon.svg",
+  "icons": {
+    "library": "lucide"
+  },
+  "interaction": {
+    "drilldown": false
   },
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg",
-    "href": "https://webglazer.com"
-  },
-  "favicon": "/favicon.svg",
-  "fonts": {
-    "family": "Geist"
-  },
-  "appearance": {
-    "default": "light",
-    "strict": true
-  },
-  "icons": {
-    "library": "lucide"
+    "href": "https://webglazer.com/docs"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Pricing",
-        "href": "https://webglazer.com/pricing"
-      },
-      {
-        "label": "Blog",
-        "href": "https://webglazer.com/blog"
-      },
-      {
-        "label": "FAQ",
-        "href": "https://webglazer.com/faq"
-      },
-      {
-        "label": "Support",
-        "href": "mailto:support@webglazer.com"
-      }
-    ],
     "primary": {
       "type": "button",
       "label": "Open dashboard",
       "href": "https://app.webglazer.com"
-    }
+    },
+    "links": [
+      {
+        "label": "Book a demo",
+        "href": "https://webglazer.com/book-demo"
+      }
+    ]
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get started",
+            "pages": [
+              "index",
+              "quickstart",
+              "concepts"
+            ]
+          },
+          {
+            "group": "Metrics",
+            "pages": [
+              "metrics/visibility",
+              "metrics/share-of-voice",
+              "metrics/mention-order",
+              "metrics/sentiment",
+              "metrics/citations"
+            ]
+          },
+          {
+            "group": "Dashboard",
+            "pages": [
+              "dashboard/overview",
+              {
+                "group": "AI Visibility",
+                "pages": [
+                  "dashboard/visibility",
+                  "dashboard/prompts",
+                  "dashboard/topics",
+                  "dashboard/platforms",
+                  "dashboard/sentiment",
+                  "dashboard/citations",
+                  "dashboard/fan-out",
+                  "dashboard/opportunities"
+                ]
+              },
+              "dashboard/products",
+              "dashboard/todo",
+              "dashboard/reports",
+              "dashboard/search-console"
+            ]
+          },
+          {
+            "group": "Setup",
+            "pages": [
+              "setup/prompts-and-topics",
+              "setup/competitors",
+              "setup/engines-and-schedule",
+              "setup/brands",
+              "setup/team",
+              "setup/agencies"
+            ]
+          },
+          {
+            "group": "Account",
+            "pages": [
+              "account/plans-and-billing",
+              "account/settings"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Integrations",
+        "groups": [
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/mcp"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Help center",
+        "groups": [
+          {
+            "group": "Help",
+            "pages": [
+              "faq"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "linkedin": "https://www.linkedin.com/company/webglazer"
+    },
+    "links": [
+      {
+        "header": "Product",
+        "items": [
+          {
+            "label": "Pricing",
+            "href": "https://webglazer.com/pricing"
+          },
+          {
+            "label": "Blog",
+            "href": "https://webglazer.com/blog"
+          },
+          {
+            "label": "FAQ",
+            "href": "https://webglazer.com/faq"
+          },
+          {
+            "label": "AI visibility checker",
+            "href": "https://webglazer.com/tools/ai-visibility-checker"
+          }
+        ]
+      },
+      {
+        "header": "Company",
+        "items": [
+          {
+            "label": "Book a demo",
+            "href": "https://webglazer.com/book-demo"
+          },
+          {
+            "label": "Contact support",
+            "href": "mailto:support@webglazer.com"
+          }
+        ]
+      },
+      {
+        "header": "Legal",
+        "items": [
+          {
+            "label": "Privacy policy",
+            "href": "https://webglazer.com/privacy"
+          },
+          {
+            "label": "Terms of service",
+            "href": "https://webglazer.com/terms"
+          }
+        ]
+      }
+    ]
   },
   "contextual": {
     "options": [
@@ -58,85 +186,5 @@
       "perplexity",
       "mcp"
     ]
-  },
-  "navigation": {
-    "groups": [
-      {
-        "group": "Get started",
-        "pages": [
-          "index",
-          "quickstart",
-          "concepts"
-        ]
-      },
-      {
-        "group": "Metrics",
-        "pages": [
-          "metrics/visibility",
-          "metrics/share-of-voice",
-          "metrics/mention-order",
-          "metrics/sentiment",
-          "metrics/citations"
-        ]
-      },
-      {
-        "group": "Dashboard",
-        "pages": [
-          "dashboard/overview",
-          {
-            "group": "AI Visibility",
-            "pages": [
-              "dashboard/visibility",
-              "dashboard/prompts",
-              "dashboard/topics",
-              "dashboard/platforms",
-              "dashboard/sentiment",
-              "dashboard/citations",
-              "dashboard/fan-out",
-              "dashboard/opportunities"
-            ]
-          },
-          "dashboard/products",
-          "dashboard/todo",
-          "dashboard/reports",
-          "dashboard/search-console"
-        ]
-      },
-      {
-        "group": "Setup",
-        "pages": [
-          "setup/prompts-and-topics",
-          "setup/competitors",
-          "setup/engines-and-schedule",
-          "setup/brands",
-          "setup/team",
-          "setup/agencies"
-        ]
-      },
-      {
-        "group": "Account",
-        "pages": [
-          "account/plans-and-billing",
-          "account/settings"
-        ]
-      },
-      {
-        "group": "Integrations",
-        "pages": [
-          "integrations/mcp"
-        ]
-      },
-      {
-        "group": "Help",
-        "pages": [
-          "faq"
-        ]
-      }
-    ]
-  },
-  "footer": {
-    "socials": {
-      "linkedin": "https://www.linkedin.com/company/webglazer"
-    }
   }
 }
