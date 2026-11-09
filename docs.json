@@ -1,0 +1,51 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "WebGlazer Docs",
+  "description": "WebGlazer tracks how ChatGPT, Perplexity, Google AI Mode, Google AI Overviews, Gemini and Copilot talk about your brand. These docs explain how to set up tracking, read every dashboard metric, and connect your own AI agent through the WebGlazer MCP server.",
+  "colors": {
+    "primary": "#0A0A0A",
+    "light": "#FFFFFF",
+    "dark": "#0A0A0A"
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "https://webglazer.com"
+  },
+  "favicon": "/favicon.svg",
+  "fonts": {
+    "family": "Geist"
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@webglazer.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Open dashboard",
+      "href": "https://app.webglazer.com"
+    }
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Get started",
+        "pages": [
+          "index"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "linkedin": "https://www.linkedin.com/company/webglazer"
+    }
+  }
+}
