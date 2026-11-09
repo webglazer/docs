@@ -1,0 +1,62 @@
+---
+title: "Citations tab"
+description: "The AI Visibility > Citations tab: the websites AI cites for your prompts, which engines cite them, and whether their pages mention you."
+icon: "link"
+---
+
+The **Citations** tab lists the websites AI links to when it answers your prompts. "If these sites talk about you, AI talks about you." Use it to pick the sites worth getting featured on.
+
+Open it from **AI Visibility** > **Citations**.
+
+## Qualifying or All sources
+
+A toggle in the top corner switches the list:
+
+- **Qualifying** (the default): sources cited by 3 or more engines across 3 or more prompts. The title reads, for example, "24 sources cited by 3+ engines across 3+ prompts". A source cited once by one engine is not a target, so it stays off this list.
+- **All sources**: every cited source, including the ones cited once by a single engine. The title reads, for example, "130 sources cited at least once".
+
+If no source clears the bar yet, you see "No sources cited by 3+ engines across 3+ prompts yet" with a hint to switch to **All sources**.
+
+## Category bar
+
+A bar above the table splits all citations by kind of site, for example **News & blogs**, **Comparison sites** or **Your site**, each with its share. It shows up to 5 of the biggest categories and rolls the rest into **Other**. Each row's dot in the table uses the same colors.
+
+## The source table
+
+| Column | What it shows |
+| --- | --- |
+| **#** | The source's rank among qualifying sources, most linked first. A dash for a source under the bar. |
+| **Site** | The website host. Click it to open the source detail. |
+| **Category** | What kind of site it is, as a colored dot. Hover for the name. |
+| **Cited by** | Which AI engines cited this source. |
+| **Times linked** | How many answers linked to this source, as a ring split by engine. Hover for the count per engine. |
+| **Reach** | How many of your topics this source is cited across, as five bars. Hover for "Cited across 3 of 10 topics · 30%". |
+| **Mentioned?** | Whether the source's checked pages name you, as "found / checked". **Your site** for your own domain. |
+
+How each column is counted is on the [Citations](/metrics/citations) metric page.
+
+- Click a column header to sort. Each click cycles ascending, descending, off, and you can stack sorts. The **#** rank stays with each source.
+- **Export** downloads the table as CSV or JSON with Site, Category, Cited by, Times linked, Reach (topics) and Mentions you.
+- All numbers cover every run in the selected period, with the topic, tag and platform filters applied.
+
+## Source detail
+
+Click a site to open its detail. The header reads, for example, "The 5 pages AI opened here when answering about you".
+
+- **Coverage**: a pill and a line such as "Mentioned on 2 of 5 checked pages". For your own site it says there is no mention to check.
+- **Named alongside**: how many AI answers named you next to this source. This counts the answers, not the page itself.
+- **Pages**: the checked pages, with **Opens** (how often AI opened each). **Show all N pages** lists every cited page with a **Mentioned?** verdict per page, and a search box.
+- **Check more pages**: shows in the **Show all N pages** view. It reads pages WebGlazer could not open on its own, so their mention verdict can be filled in. Each check reads up to 20 pages.
+
+**Check more pages** limits:
+
+- Each person can run 20 checks a day. The count resets at midnight UTC. It is the same on every plan and does not use your prompts or credits.
+- At the limit you see "Daily limit reached. You've used all of today's page checks, so try again tomorrow."
+- Members and Company Admins can run checks. Viewers cannot.
+
+If the tab says "No citations yet", it fills in after your next daily run.
+
+<CardGroup cols={2}>
+  <Card title="Citations" href="/metrics/citations">How each number is counted.</Card>
+  <Card title="Opportunities" href="/dashboard/opportunities">Qualifying sources that do not name you.</Card>
+</CardGroup>

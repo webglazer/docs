@@ -16,6 +16,7 @@ Reference sites: https://cloro.dev/docs (layout, landing cards, quickstart shape
 - Plain, direct English. Second person ("you"). Short sentences.
 - No em dashes. No AI filler words (delve, crucial, robust, comprehensive, seamless, leverage, unlock, empower, landscape, pivotal, foster, showcase, vibrant).
 - Lead with what the reader can do or learn. One idea per paragraph.
+- American spelling in prose (color, analyze, organize). Quote UI labels exactly, even when the UI uses British spelling (for example **Uncategorised**, "Analysing competitors & sentiment").
 
 ## Page shape
 - Frontmatter: `title` (plain, under 60 chars), `description` (one sentence, what the page answers; it becomes the llms.txt line), optional `icon` (Lucide name).

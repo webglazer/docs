@@ -1,0 +1,57 @@
+---
+title: "Share of Voice"
+description: "Your brand's share of the mentions of your brand and tracked competitors in AI answers, and how WebGlazer calculates it."
+icon: "pie-chart"
+---
+
+Share of Voice (SoV) is your slice of the brand mentions in AI answers, counted across your brand and the competitors you track. Where [Visibility](/metrics/visibility) asks "how often am I named?", Share of Voice asks "of the brands I compare myself with, how much of the mentions are mine?".
+
+## What it measures
+
+Share of Voice shows how much of the conversation you own compared with the competitors you track. It is the number to watch in a crowded market, where many answers list several brands at once.
+
+## How it is calculated
+
+Share of Voice = answers that name your brand ÷ total brand mentions × 100, rounded half up to one decimal.
+
+"Total brand mentions" counts each brand once per answer that names it, added up over your brand and every competitor you track. So an answer that names 3 brands adds 3 to the total. An answer that repeats one brand's name 5 times still adds 1 for that brand.
+
+The same answer rules apply as for Visibility:
+
+- Only successful answers from the run's selected engines.
+- Only answers to non-branded prompts.
+- Every run in the selected date range is pooled, then divided once.
+- Topic, tag and platform filters apply to both sides.
+- The total counts your brand and every competitor you track. Brands you have not added, and brands you hid, are not in it. See [Competitors](/setup/competitors).
+- Merged brands count as one brand.
+
+<Note>
+**Example with made-up numbers.** 10 answers count. Your brand is named in 5 of them. Competitor A is named in 6 and competitor B in 4. Total brand mentions = 5 + 6 + 4 = 15. Your Share of Voice = 5 ÷ 15 × 100 = 33.3%. Your Visibility for the same answers is 5 ÷ 10 = 50%.
+</Note>
+
+Competitors get a Share of Voice by the same rule, so the shares of your brand and your tracked, unhidden competitors add up to about 100% (rounding aside).
+
+## Where you see it
+
+- **Overview** > **Rankings**: the **SOV** column, with a change chip.
+- **AI Visibility** > **Visibility** tab: the **Share of Voice** line in the **Visibility Score** chart. It is on by default.
+- **AI Visibility** > **Prompts** tab: the **Share of voice** figure above the table.
+
+## How to read it
+
+- Visibility can rise while Share of Voice falls. That happens when answers name more brands overall: you appear more often, but so does everyone else.
+- A high Share of Voice with low Visibility means the answers that do name you name few other brands.
+- The change chip compares with the previous period of the same length, in percentage points (pp). On **All time** there is no chip.
+
+## What moves it
+
+- Getting named in more answers moves it up, like Visibility.
+- Competitors getting named more moves it down, even if your own count stays the same.
+- Tracking more competitors adds their mentions to the total, so your share goes down.
+- Hiding a brand removes it from the total, so your share goes up. A hide by a Viewer changes only that Viewer's view. When a Member or Company Admin removes a tracked competitor in **Settings** > **Brands**, it leaves the total for everyone on the project.
+- Filters change the pool of answers, so your share in one topic can differ a lot from your overall share.
+
+<CardGroup cols={2}>
+  <Card title="Visibility" href="/metrics/visibility">How often AI names you.</Card>
+  <Card title="Overview" href="/dashboard/overview">Rankings for you and your tracked competitors.</Card>
+</CardGroup>

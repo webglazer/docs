@@ -1,0 +1,75 @@
+---
+title: "Overview"
+description: "What the Overview page shows: the brand visibility chart and the Rankings table for your brand and the competitors you track."
+icon: "layout-dashboard"
+---
+
+The **Overview** page is the first page you land on. It answers one question: how visible are you in AI answers compared with the other brands in your market?
+
+Open it from **Overview** at the top of the sidebar.
+
+## Filter bar
+
+The bar at the top sets the scope for every number on the page.
+
+- The date pill: **Last 7 Days** (the default), **Last 30 Days**, **Last 90 Days**, **Last 6 Months**, **Last 12 Months**, **All time**, or **Custom range** to pick days on a calendar. Every number is calculated over all runs in the range.
+- **Topics**: limit the page to one topic, or **All topics**.
+- **Tags**: limit the page to prompt types (search intents), for example **Informational**, **Consideration** or **Transactional**. Older runs can also carry older tags, such as **Commercial**, **Navigational**, **Comparison** or **Post-purchase**, and these show in the picker too.
+- **Platforms**: limit the page to one or more AI engines.
+- **Reset**: shows once you change anything, and puts every filter back to its default.
+
+The branded topic and the **Branded** tag are hidden on this page. Branded prompts already name you in the question, so they cannot produce a visibility rate.
+
+If no run falls inside the filters, the page shows "No runs match your filters." with a way to reset them.
+
+## Visibility Over Time
+
+A chart of how often AI mentions each of the top 10 brands from **Rankings**. It has two views, switched with the toggle in the card's top corner:
+
+- **By brand** (the default): one bar per brand, showing its [Visibility](/metrics/visibility) for the whole period. This answers "who is ahead right now".
+- **By date**: one line per brand across the period. This answers "how has it moved". It needs runs on at least two dates; otherwise it says "Not enough runs in this period to chart a trend".
+
+Click brand chips in the legend to show only those brands. Click again to remove them.
+
+Use **Export** to download the chart data as CSV or JSON: one row per date, one column per brand.
+
+## Rankings
+
+"Brands ranked by how often AI mentions them." One row per brand: your own brand and the competitors you track. A brand AI names that you do not track is not listed. Accept it in **Settings** > **Brands** to add it. See [Competitors](/setup/competitors).
+
+| Column | What it shows |
+| --- | --- |
+| **#** | The brand's rank, with a chip showing places gained or lost against the previous period. |
+| **Brand** | The brand name and logo. |
+| **Visibility** | Share of answers that name the brand. See [Visibility](/metrics/visibility). |
+| **SOV** | The brand's share of all brand mentions. See [Share of Voice](/metrics/share-of-voice). |
+| **Sentiment** | How well AI talks about the brand, 0 to 100. Shown for your own brand only. See [Sentiment](/metrics/sentiment). |
+| **Mention order** | Average place where AI first names the brand in the answer. 1 = named first. See [Mention order](/metrics/mention-order). |
+
+### How brands are ranked
+
+The default order is set by WebGlazer, not by the browser:
+
+1. Higher Visibility first.
+2. On a tie, higher Share of Voice.
+3. Then more answers naming the brand.
+4. Then the better (lower) Mention order.
+5. On a full tie, your own brand first, then by name.
+
+Without topic, tag or platform filters, a competitor needs at least 3 answers naming it to get a rank. Your own brand always gets one. With a filter on, every tracked brand AI names ranks, because the slice is small. The table lists at most 50 competitors, plus your own brand and every competitor you declared, wherever they rank.
+
+### Sorting, change chips and export
+
+- Click a column header to sort by it. Each click cycles ascending, descending, off. Sort a second column to break ties in the first. The **#** rank stays with each brand.
+- Change chips compare with the previous period of the same length, for example the 7 days before the current 7 days. **All time** has no chips. If the previous period has no data, you see a "no comparison" note instead.
+- Use **Export** to download the table as CSV or JSON.
+- With more rows than one page holds, use the pager under the table.
+
+## While a run is still being read
+
+When a run's answers are in but WebGlazer is still reading them for brands and sentiment, a banner says "Analysing competitors & sentiment". Share of voice, rankings and sentiment can still change until it finishes.
+
+<CardGroup cols={2}>
+  <Card title="Visibility tab" href="/dashboard/visibility">Your own trend across four metrics.</Card>
+  <Card title="Prompts tab" href="/dashboard/prompts">Every tracked prompt and its answers.</Card>
+</CardGroup>

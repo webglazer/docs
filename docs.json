@@ -2,7 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "WebGlazer Docs",
-  "description": "WebGlazer tracks how ChatGPT, Perplexity, Google AI Mode, Google AI Overviews, Gemini and Copilot talk about your brand. These docs explain how to set up tracking, read every dashboard metric, and connect your own AI agent through the WebGlazer MCP server.",
+  "description": "WebGlazer tracks how AI engines (ChatGPT, Perplexity, Google AI Mode, Gemini and Copilot) talk about your brand. These docs explain how to set up tracking, read every dashboard metric, and connect your own AI agent through the WebGlazer MCP server.",
   "colors": {
     "primary": "#0A0A0A",
     "light": "#FFFFFF",
@@ -23,6 +23,10 @@
   "navbar": {
     "links": [
       {
+        "label": "Pricing",
+        "href": "https://webglazer.com/pricing"
+      },
+      {
         "label": "Support",
         "href": "mailto:support@webglazer.com"
       }
@@ -33,12 +37,87 @@
       "href": "https://app.webglazer.com"
     }
   },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp"
+    ]
+  },
   "navigation": {
     "groups": [
       {
         "group": "Get started",
         "pages": [
-          "index"
+          "index",
+          "quickstart",
+          "concepts"
+        ]
+      },
+      {
+        "group": "Metrics",
+        "pages": [
+          "metrics/visibility",
+          "metrics/share-of-voice",
+          "metrics/mention-order",
+          "metrics/sentiment",
+          "metrics/citations"
+        ]
+      },
+      {
+        "group": "Dashboard",
+        "pages": [
+          "dashboard/overview",
+          {
+            "group": "AI Visibility",
+            "pages": [
+              "dashboard/visibility",
+              "dashboard/prompts",
+              "dashboard/topics",
+              "dashboard/platforms",
+              "dashboard/sentiment",
+              "dashboard/citations",
+              "dashboard/fan-out",
+              "dashboard/opportunities"
+            ]
+          },
+          "dashboard/products",
+          "dashboard/todo",
+          "dashboard/reports",
+          "dashboard/search-console"
+        ]
+      },
+      {
+        "group": "Setup",
+        "pages": [
+          "setup/prompts-and-topics",
+          "setup/competitors",
+          "setup/engines-and-schedule",
+          "setup/brands",
+          "setup/team",
+          "setup/agencies"
+        ]
+      },
+      {
+        "group": "Account",
+        "pages": [
+          "account/plans-and-billing",
+          "account/settings"
+        ]
+      },
+      {
+        "group": "Integrations",
+        "pages": [
+          "integrations/mcp"
+        ]
+      },
+      {
+        "group": "Help",
+        "pages": [
+          "faq"
         ]
       }
     ]

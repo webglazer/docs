@@ -1,0 +1,347 @@
+---
+title: "Connect your AI agent (MCP)"
+description: "Connect Claude, Claude Code, Cursor or another MCP client to your WebGlazer data, and see every tool it can use."
+icon: "plug"
+---
+
+The WebGlazer MCP server lets your own AI agent read your WebGlazer AI-visibility data: runs, prompts, AI answers, citations, sentiment, trends, products and your To-do list. You ask questions in plain language, and the agent answers from the same data the dashboard shows. One connection covers every brand you have access to.
+
+The agent can read everything listed below. It can change one thing: the status of items on your To-do list.
+
+## Connection details
+
+| Property | Value |
+| --- | --- |
+| **Server URL** | `https://webglazer-mcp-56836240603.europe-west1.run.app/mcp` |
+| **Transport** | Streamable HTTP |
+| **Authentication** | OAuth sign-in, or a token you generate in WebGlazer |
+
+Always copy the current server URL from the dashboard: go to **Settings** > **Integrations** > **Your AI agent**, expand **Setup guide** and copy it from **Server URL**. If the URL in the dashboard differs from the one on this page, use the dashboard's.
+
+## Before you start
+
+- A WebGlazer account with at least one brand.
+- An active subscription on the brands you want the agent to read. A brand whose subscription has ended is refused.
+- An AI client that supports MCP. In Claude, custom connectors work on every plan, but a Free plan can add only one custom connector.
+
+## Two ways to connect
+
+**Sign in from your client (OAuth).** This is the recommended way. You paste the server URL into your client, your browser opens a WebGlazer approval screen, and you click **Allow**. There is no token to copy or keep safe. Use this for Claude.ai, Claude Desktop and Claude Code.
+
+**Paste a token.** For clients that cannot sign in, such as Cursor. You generate a token in WebGlazer and add it to your client as an `Authorization: Bearer` header.
+
+Both kinds of connection can read every brand you have access to and update the status of items on your To-do list.
+
+### What you see on the approval screen
+
+When your client sends you to WebGlazer, you land on `app.webglazer.com/oauth/consent`.
+
+1. If you are not signed in, the screen says **Connect your AI client to WebGlazer**. Click **Continue with Google**, or **Use email instead**.
+2. The screen then asks **Connect [client name]?** If WebGlazer could confirm where the client comes from, it shows the client as verified with its web address. If it could not, it warns that the name is unverified, because anyone who registers a client can pick any name.
+3. It shows where your tokens will be sent (the client's web address).
+4. It lists what the client is asking for: **Read your visibility data, prompts, citations and sentiment** and **Update the status of items on your To Do list** (the screen's wording for the To-do list).
+5. It lists your brands under **This connection can read every brand you have access to:**. You do not pick a brand. Approving connects your whole account, and the connection covers every brand on that list.
+6. Click **Allow** to connect, or **Deny** to cancel.
+
+If you have no brands yet, the screen says so and **Allow** is disabled. Create a brand in WebGlazer first.
+
+<Note>
+The connection follows your access. If you gain access to a new brand later, the agent can read it too. If you lose access to a brand, the agent loses it too.
+</Note>
+
+## Generate a token
+
+You only need a token for clients that cannot sign in.
+
+<Steps>
+  <Step title="Open Your AI agent">
+    In the dashboard, go to **Settings**, then **Integrations**, and find **Your AI agent**.
+  </Step>
+  <Step title="Generate the token">
+    Click **Generate token**. Under **Name this token**, type a name of up to 40 characters, such as the client you will use it in. Click **Generate**.
+  </Step>
+  <Step title="Copy it now">
+    The dialog shows **Your token is ready** with the **Token** and the **Server URL**. Copy the token right away. It is shown once and never stored, so you cannot see it again.
+  </Step>
+  <Step title="Add it to your client">
+    Expand **Setup guide**. Under **Option 2: Paste a token**, the configs for Claude Code, Cursor and other clients already contain the token you just generated. Copy the one you need.
+  </Step>
+</Steps>
+
+A token expires 30 days after you create it. Generate a new one when it does.
+
+<Warning>
+Treat a token like a password. Anyone who has it can read every brand you have access to and change your To-do list. If a token leaks, revoke it.
+</Warning>
+
+## Connect your client
+
+<Tabs>
+  <Tab title="Claude.ai and Claude Desktop">
+    Copy the server URL from **Settings** > **Integrations** > **Your AI agent**: expand **Setup guide** and copy it from **Server URL**.
+
+    Claude signs in with OAuth, so you do not need a token.
+
+    <Steps>
+      <Step title="Add a custom connector">
+        In Claude, go to **Customize** > **Connectors**. Click **+ Add**, then **Add custom connector**.
+      </Step>
+      <Step title="Enter the server details">
+        Give the connector a name, such as WebGlazer. Paste the server URL you copied and click **Continue**.
+      </Step>
+      <Step title="Choose how to sign in">
+        Under **Authentication**, choose **Sign in now** or **Sign in when needed**. Do not choose **No sign in**. Under **OAuth client**, keep **Use Claude's published identity (Recommended)**. Click **Add**.
+      </Step>
+      <Step title="Approve in WebGlazer">
+        Your browser opens the WebGlazer approval screen. Check the brand list and click **Allow**.
+      </Step>
+      <Step title="Turn it on in a chat">
+        In a conversation, click **+** in the lower left, open **Connectors** and switch WebGlazer on.
+      </Step>
+    </Steps>
+
+    On Team and Enterprise plans, an Owner or Primary Owner adds the connector first under **Organization settings** > **Connectors**. Members then go to **Customize** > **Connectors**, find the connector and click **Connect**.
+
+    Source: Anthropic's guide, [Get started with custom connectors using remote MCP](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp).
+  </Tab>
+  <Tab title="Claude Code">
+    Copy the server URL from **Settings** > **Integrations** > **Your AI agent**: expand **Setup guide** and copy it from **Server URL**. The examples below show today's URL; use yours if it differs.
+
+    **Sign in (recommended).** Run this in your terminal, with your server URL:
+
+    ```bash
+    claude mcp add --transport http webglazer https://webglazer-mcp-56836240603.europe-west1.run.app/mcp
+    ```
+
+    Then start Claude Code, type `/mcp`, select the webglazer server and choose **Authenticate**. Your browser opens the WebGlazer approval screen. Click **Allow**. No token and no header are needed.
+
+    **With a token.** Generate a token first, then run this, with your server URL:
+
+    ```bash
+    claude mcp add --transport http webglazer https://webglazer-mcp-56836240603.europe-west1.run.app/mcp --header "Authorization: Bearer <your token>"
+    ```
+
+    Source: [Connect Claude Code to tools via MCP](https://code.claude.com/docs/en/mcp).
+  </Tab>
+  <Tab title="Cursor">
+    Copy the server URL from **Settings** > **Integrations** > **Your AI agent**: expand **Setup guide** and copy it from **Server URL**. The examples below show today's URL; use yours if it differs.
+
+    Connect Cursor with a token.
+
+    <Steps>
+      <Step title="Generate a token">
+        Follow [Generate a token](#generate-a-token) above.
+      </Step>
+      <Step title="Add the server to mcp.json">
+        Add this to `.cursor/mcp.json` in your project (for one project) or to `~/.cursor/mcp.json` (for every project). Use your server URL, and replace `<your token>` with your token.
+
+        ```json
+        {
+          "mcpServers": {
+            "webglazer": {
+              "url": "https://webglazer-mcp-56836240603.europe-west1.run.app/mcp",
+              "headers": {
+                "Authorization": "Bearer <your token>"
+              }
+            }
+          }
+        }
+        ```
+      </Step>
+      <Step title="Check the connection">
+        Ask Cursor's agent to list your WebGlazer brands.
+      </Step>
+    </Steps>
+
+    Source: [Cursor MCP docs](https://cursor.com/docs/mcp).
+  </Tab>
+  <Tab title="Other clients">
+    Copy the server URL from **Settings** > **Integrations** > **Your AI agent**: expand **Setup guide** and copy it from **Server URL**. The examples below show today's URL; use yours if it differs.
+
+    WebGlazer has not tested ChatGPT, VS Code, Windsurf or Codex yet. They may work through one of the ways below.
+
+    **Clients that support MCP connectors with sign-in.** Add the server URL as a custom connector and sign in when your client asks. You land on the same WebGlazer approval screen.
+
+    **Clients that support remote servers with headers.** Point the client at the server URL and send your token as the header `Authorization: Bearer <your token>`.
+
+    **Clients that only launch a command.** Use `mcp-remote` to bridge to the server URL. Use your server URL, and replace `<your token>` with your token:
+
+    ```json
+    {
+      "mcpServers": {
+        "webglazer": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "mcp-remote",
+            "https://webglazer-mcp-56836240603.europe-west1.run.app/mcp",
+            "--header",
+            "Authorization: Bearer <your token>"
+          ]
+        }
+      }
+    }
+    ```
+  </Tab>
+</Tabs>
+
+## Check that it works
+
+Ask your agent:
+
+> *"List my WebGlazer brands."*
+
+The agent calls `list_projects` and shows each brand with its name, domain and your role. Then ask:
+
+> *"Show me the latest runs for [brand]."*
+
+If both come back, you are connected.
+
+## Example prompts
+
+- *"How did our AI visibility change week by week over the last three months?"*
+- *"Which sources does AI cite most when it answers our prompts? Are any of them sites where we are not mentioned?"*
+- *"How does AI describe our brand? Summarize the sentiment for the latest run."*
+- *"Show me what each engine answered for the prompt 'best project management tool for agencies'."*
+- *"Which prompts have the lowest visibility in the last run?"*
+- *"What is on our To-do list? Pick the three items that affect the most prompts and mark them as todo."*
+- *"Compare our visibility in Google AI Mode and ChatGPT for the last 30 days."*
+- *"Which of our products are most visible in ChatGPT?"*
+- *"Which competitor products show up in the same answers as our best seller?"*
+- *"Compare visibility across all my brands for the latest run."*
+
+## Tools
+
+The server has 15 tools. All of them read data except `mark_opportunity`, which changes the status of an item on your To-do list.
+
+Every tool except `list_projects` takes a `project_id`: the brand to read, as `list_projects` returns it. Your agent handles this for you; you only need to name the brand in your question.
+
+A run is one day's set of AI answers for a brand. Some tools read one run, picked from `list_runs`. See [Core concepts](/concepts#run).
+
+| Tool | What it returns | Parameters | Access |
+| --- | --- | --- | --- |
+| `list_projects` | The brands this connection can read: id, name, main domain and your role (admin, member or viewer). | None | Read |
+| `list_runs` | The brand's runs that have results, newest first, and the run the dashboard opens. | `project_id` | Read |
+| `get_run_summary` | Summary numbers for one run (mentions, answers, status), or for a date range. | `project_id`, the run, period and filters | Read |
+| `get_prompts` | The prompts in a run, the same list the dashboard shows, with each prompt's visibility numbers. | `project_id`, the run, `limit` (default 50, up to 100), `offset` | Read |
+| `get_prompt_answers` | The AI answers recorded for one prompt across engines. | `project_id`, the run, `prompt_id`, period and filters | Read |
+| `get_citations` | The citation leaderboard: the sources AI cited, plus the citation totals for the period. | `project_id`, `limit` (default 25, up to 100), `offset`, period and filters, `today` | Read |
+| `get_sources` | The same rows and totals as `get_citations`, listed as sources by host. | Same as `get_citations` | Read |
+| `get_sentiment` | How AI describes the brand: the sentiment breakdown for a run or a date range. | `project_id`, the run, period and filters | Read |
+| `get_trend` | Visibility over time, per run, day, week or month, as the dashboard trend shows it. | `project_id`, `granularity` (`run`, `day`, `week` or `month`), period and filters | Read |
+| `get_filter_options` | The topics, intents and engines that exist in a period, to use as filters in the other tools. | `project_id`, `date_from`, `date_to`, `all_time` | Read |
+| `list_opportunities` | Your opportunities and To-do items: cited sources where your brand is absent, ranked by how many prompts they affect. Dismissed items are left out. | `project_id`, period and filters, `today` | Read |
+| `get_opportunity` | One item with its evidence and a ready-to-run instruction for fixing it. | `project_id`, `id`, period and filters, `today` | Read |
+| `mark_opportunity` | Sets the status of one item and returns the new status. | `project_id`, `id`, `status` (`open`, `todo`, `done` or `dismissed`) | **Write** |
+| `list_products` | Product visibility for your connected Shopify store: each product's visibility, appearances, position, wins and win rate, merchants and prices, plus product categories. | `project_id`, `date_from`, `date_to`, `all_time`, `today`, `models`, `scope`, `sort`, `order`, `category`, `page`, `page_size` (up to 100) | Read |
+| `get_product` | One product: its numbers, visibility per linked prompt, the merchants AI named, competing products and its position distribution. | `project_id`, `shopify_product_id`, `date_from`, `date_to`, `all_time`, `today`, `models`, `scope` | Read |
+
+### Period and filters
+
+Many tools accept the same optional period and filters:
+
+- `date_from` and `date_to`: the first and last day, as YYYY-MM-DD. Send both or neither.
+- `all_time`: `true` reads the dashboard's All time period. It cannot be combined with dates.
+- `topics`, `intents` and `models`: keep only these topics, intents or engines. Get the valid values from `get_filter_options`.
+- `today`: your local date, as YYYY-MM-DD. With no dates, the tool reads the period the dashboard opens on, and `today` makes that period match the one you see in the dashboard.
+
+Every result repeats the period it applied, so your agent can tell you which dates the numbers cover.
+
+The product tools take `models` but not `topics` or `intents`. Their `scope` is `shopping` (the default: only answers that showed product cards) or `all` (every answer). Product tools work only on plans that include Products: Standard, Advanced, agency plans, and the Basic free trial. On a paid Basic plan they return "Product visibility is not included in this project's WebGlazer plan, so there is no product data to show." With no store connected, `list_products` returns an empty list and `get_product` says the project has no Shopify store connected. Connecting or disconnecting a store happens in the dashboard. See [Products](/dashboard/products) and [Plans and billing](/account/plans-and-billing).
+
+## Read and write access
+
+Every tool reads data except `mark_opportunity`. It sets an item to `todo` (picked to work on), `done` or `dismissed`, or reopens it with `open`. The change shows on your own To-do list in the dashboard. To-do statuses are personal, so teammates keep their own. It only writes to the brand you name. Every role, Viewers included, can change their own statuses.
+
+A token you generate in WebGlazer always includes write access. A client that signs in gets the permissions you see on the approval screen. If the screen did not include **Update the status of items on your To Do list**, the connection can still read everything, but `mark_opportunity` is refused.
+
+## Limits
+
+- **One call, 45 seconds.** A tool call that takes longer stops with "WebGlazer took too long to answer; try again".
+- **Paged lists.** `get_prompts` returns 50 rows by default, `get_citations` and `get_sources` return 25. Each returns up to 100 rows per call. The agent pages through the rest with `offset`.
+- **Products.** `list_products` returns up to 100 products per page.
+- **Sign-in sessions.** A client that signed in renews its access on its own, but only for 90 days from the day you clicked **Allow**. This holds even if you use it every day. After 90 days, connect it again.
+- **Tokens.** A generated token expires after 30 days.
+
+## Revoke access
+
+<Steps>
+  <Step title="Open the list">
+    Go to **Settings** > **Integrations** > **Your AI agent** and expand **Clients and tokens**. It shows how many are active, for example "2 active of 3".
+  </Step>
+  <Step title="Find the connection">
+    Under **All brands you have access to**, each row shows its name, a **Signed in** badge (a client that connected with OAuth) or a **Token** badge (a token you generated), when it was created and when it expires.
+  </Step>
+  <Step title="Revoke it">
+    Click **Revoke**, then **Revoke?** to confirm. You see **Access revoked**.
+  </Step>
+</Steps>
+
+Access ends at once. The next call from that client fails, and a signed-in client cannot renew its access.
+
+You see and revoke only your own connections. If your WebGlazer account is deleted (you ask for this by emailing support), all of them are revoked.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="My client says unauthorized (401)">
+    The token or sign-in is missing, expired or revoked. Check **Clients and tokens** under **Your AI agent**. If the row says **Revoked** or **Expired**, generate a new token or connect the client again. With a token, check that your client sends the header exactly as `Authorization: Bearer <your token>`.
+  </Accordion>
+  <Accordion title='"project_id is required: call list_projects first"'>
+    The agent called a tool without naming a brand. Ask it to list your WebGlazer brands first, then repeat your question with the brand name.
+  </Accordion>
+  <Accordion title='"no brand with that id on this connection"'>
+    You do not have access to that brand, or it no longer exists. Ask the agent to list your brands and use one from that list.
+  </Accordion>
+  <Accordion title='"this connection covers one brand; reconnect to use all brands"'>
+    This is an older connection made for a single brand. Connect the client again, or generate a new token, to get a connection that covers every brand. Then revoke the old one: it is listed under **One brand each** in **Clients and tokens**.
+  </Accordion>
+  <Accordion title='"The WebGlazer subscription for this project has ended"'>
+    The brand's subscription is no longer active. The project owner can renew it in WebGlazer under **Settings** > **Billing & plan**. Other brands on the same connection keep working. See [Plans and billing](/account/plans-and-billing).
+  </Accordion>
+  <Accordion title={"\"WebGlazer could not check this project's subscription. Try again shortly.\""}>
+    WebGlazer could not check the brand's subscription at that moment. This is on WebGlazer's side. Wait a minute and ask again. If it keeps happening, email [support@webglazer.com](mailto:support@webglazer.com).
+  </Accordion>
+  <Accordion title={"\"Product visibility is not included in this project's WebGlazer plan\""}>
+    The brand's plan does not include Products. Products is part of Standard, Advanced and agency plans, and the Basic free trial. See [Plans and billing](/account/plans-and-billing).
+  </Accordion>
+  <Accordion title='"This company is not active right now. Try again later."'>
+    The company is temporarily locked, for example during an ownership transfer or a pending deletion. Try again later.
+  </Accordion>
+  <Accordion title='"this connection is not authorized for mcp:write"'>
+    Your client signed in with read access only, so it cannot change To-do statuses. Connect it again and make sure the approval screen lists **Update the status of items on your To Do list** before you click **Allow**.
+  </Accordion>
+  <Accordion title='"WebGlazer took too long to answer; try again"'>
+    The call ran longer than 45 seconds. Ask again, or narrow the question, for example to a shorter date range.
+  </Accordion>
+  <Accordion title='The approval screen says "Invalid connection link"'>
+    The link is incomplete or expired. Start the connection again from your AI client.
+  </Accordion>
+  <Accordion title="The results are from an older run">
+    When the newest run has no data yet, the tools return the last run that does. The agent is told to say so and to name the date of that run.
+  </Accordion>
+</AccordionGroup>
+
+## This server vs the docs MCP
+
+WebGlazer has two MCP servers. They do different things:
+
+- **The product MCP server** (this page) reads your own WebGlazer data. It needs you to sign in or use a token.
+- **The docs MCP server** at `https://webglazer.com/docs/mcp` searches these help docs only. It has no access to your account or data. Add it if you want your agent to answer "how do I" questions about WebGlazer.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Settings" icon="settings" href="/account/settings">
+    Where **Integrations** and **Your AI agent** live.
+  </Card>
+  <Card title="Citations" icon="link" href="/metrics/citations">
+    What the citation numbers your agent reads mean.
+  </Card>
+  <Card title="Products" icon="shopping-bag" href="/dashboard/products">
+    The product visibility data behind `list_products`.
+  </Card>
+  <Card title="Visibility" icon="eye" href="/metrics/visibility">
+    How visibility is measured.
+  </Card>
+</CardGroup>
