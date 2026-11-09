@@ -1,0 +1,45 @@
+/* Import the same font used on webglazer.com (copied from mintlify.com/docs fonts.css) */
+
+/* Geist Variable Font - matching the main site */
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+
+/* Override Mintlify's default font variables to match main site */
+:root {
+  --font-inter: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+/* Apply fonts to body and common elements with explicit OpenType features */
+body {
+  font-family: var(--font-inter);
+  font-feature-settings: normal;
+  font-variant-numeric: normal;
+  font-variant-ligatures: normal;
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+/* True italics instead of synthetic slanted text */
+em,
+i,
+.italic {
+  font-style: italic;
+  font-synthesis: none;
+}
+
+/* Disable stylistic alternates that might cause character differences */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div {
+  font-feature-settings: "ss01" 0, "ss02" 0, "ss03" 0;
+  font-variant-alternates: normal;
+}

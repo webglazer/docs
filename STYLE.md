@@ -25,3 +25,8 @@ Reference sites: https://cloro.dev/docs (layout, landing cards, quickstart shape
 - Metric pages: What it measures, How it is calculated (from pipeline code, in plain words), Where you see it, How to read it, What moves it.
 - Internal links are root-relative without extension: `/metrics/visibility`.
 - No screenshots yet (none exist). Do not reference images that are not in the repo.
+
+## Design
+- Stock Mintlify `luma` theme, copied from https://www.mintlify.com/docs (open-source config: github.com/mintlify/docs). Only the WebGlazer logo, colors, font and links differ.
+- No custom page chrome. `style.css` only hides the Mintlify Assistant entry points (assistant is off on the free plan). `fonts.css` loads Geist the same way Mintlify's `fonts.css` loads Inter.
+- Home page (`index.mdx`): `mode: "frame"` hero copied from Mintlify's index (centered title, background art, 2-column image cards). Card art lives in `images/hero/` as light and dark SVG pairs.
