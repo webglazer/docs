@@ -718,3 +718,12 @@ html[data-wg-hero] #page-title {
 #footer {
   border-top-color: var(--wg-line);
 }
+
+/* Mintlify Assistant is a Pro feature and is turned off for this project
+   (free Starter plan). While Mintlify still renders its entry points, keep
+   them out of the site-style navbar and page footer. */
+button[aria-label="Toggle assistant panel"],
+.chat-assistant-floating-input,
+[data-assistant-bar] {
+  display: none !important;
+}
