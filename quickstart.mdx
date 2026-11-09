@@ -2,6 +2,10 @@
 title: "Quickstart"
 description: "Set up WebGlazer from sign up to your first AI visibility results in the dashboard."
 icon: "rocket"
+related:
+  - /concepts
+  - /setup/prompts-and-topics
+  - /metrics/visibility
 ---
 
 This guide walks you through the setup wizard at [app.webglazer.com](https://app.webglazer.com), from creating your account to seeing your first results on the Overview. You need your website address and a payment card for the plan or free trial.
@@ -15,6 +19,18 @@ Your first run starts as soon as you finish setup. The engines usually answer wi
 - Have a few competitors in mind. WebGlazer suggests some, and you can add your own.
 
 ## Set up tracking
+
+The whole flow at a glance:
+
+```mermaid actions={false}
+%%{init: {'theme': 'base', 'flowchart': {'wrappingWidth': 460, 'rankSpacing': 28, 'nodeSpacing': 24, 'padding': 10}, 'themeVariables': {'fontFamily': 'Geist, sans-serif', 'fontSize': '14px', 'primaryColor': '#F5F5F5', 'primaryTextColor': '#0A0A0A', 'primaryBorderColor': '#E5E5E5', 'lineColor': '#737373'}}}%%
+flowchart TB
+    A["Create your account"] --> B["Steps 1 to 4: project details, brand, topics, prompts"]
+    B --> C["Step 5: choose a plan in Stripe"]
+    C --> D["Pick your engines and invite your team"]
+    D --> E["First run: about 4 to 6 minutes"]
+    E --> F["Results on the Overview"]
+```
 
 <Steps>
   <Step title="Create your account">
@@ -95,18 +111,3 @@ After the first run, WebGlazer asks the AI engines your prompts once a day for e
 1. Go to **Settings** > **Brands** and accept the competitors you want to compare with from **Brand suggestions**. Only your own brand and the competitors you track count in **Rankings**, Share of Voice and the other competitor numbers. A brand AI names that you have not accepted is left out. See [Competitors](/setup/competitors).
 2. Open **AI Visibility** > **Prompts** to see each answer and where your brand appears.
 3. Invite colleagues from **Settings** > **Members**.
-
-<CardGroup cols={2}>
-  <Card title="Core concepts" icon="book-open" href="/concepts">
-    The words WebGlazer uses, explained.
-  </Card>
-  <Card title="Visibility" icon="eye" href="/metrics/visibility">
-    The main number to watch.
-  </Card>
-  <Card title="Prompts and topics" icon="list" href="/setup/prompts-and-topics">
-    Add, edit and archive prompts.
-  </Card>
-  <Card title="Competitors" icon="users" href="/setup/competitors">
-    Track the brands you compete with.
-  </Card>
-</CardGroup>

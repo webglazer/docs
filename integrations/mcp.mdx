@@ -2,6 +2,10 @@
 title: "Connect your AI agent (MCP)"
 description: "Connect Claude, Claude Code, Cursor or another MCP client to your WebGlazer data, and see every tool it can use."
 icon: "plug"
+related:
+  - /account/settings
+  - /metrics/visibility
+  - /metrics/citations
 ---
 
 The WebGlazer MCP server lets your own AI agent read your WebGlazer AI-visibility data: runs, prompts, AI answers, citations, sentiment, trends, products and your To-do list. You ask questions in plain language, and the agent answers from the same data the dashboard shows. One connection covers every brand you have access to.
@@ -328,20 +332,3 @@ WebGlazer has two MCP servers. They do different things:
 
 - **The product MCP server** (this page) reads your own WebGlazer data. It needs you to sign in or use a token.
 - **The docs MCP server** at `https://webglazer.com/docs/mcp` searches these help docs only. It has no access to your account or data. Add it if you want your agent to answer "how do I" questions about WebGlazer.
-
-## Next steps
-
-<CardGroup cols={2}>
-  <Card title="Settings" icon="settings" href="/account/settings">
-    Where **Integrations** and **Your AI agent** live.
-  </Card>
-  <Card title="Citations" icon="link" href="/metrics/citations">
-    What the citation numbers your agent reads mean.
-  </Card>
-  <Card title="Products" icon="shopping-bag" href="/dashboard/products">
-    The product visibility data behind `list_products`.
-  </Card>
-  <Card title="Visibility" icon="eye" href="/metrics/visibility">
-    How visibility is measured.
-  </Card>
-</CardGroup>

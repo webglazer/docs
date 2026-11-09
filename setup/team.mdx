@@ -2,22 +2,32 @@
 title: "Team"
 description: "How to invite teammates to WebGlazer, what each role can do, how to accept an invite, and how to change or remove access."
 icon: "user-plus"
+related:
+  - /setup/brands
+  - /setup/agencies
+  - /account/settings
 ---
 
 Invite teammates so they can read or work on your brands. Each person gets one role in your company, and Viewers and Members only reach the brands you pick for them.
 
 ## Roles
 
-| Role | What they can do |
-| --- | --- |
-| **Viewer** | Reads the selected projects. |
-| **Member** | Edits content, prompts, topics, competitors and tracking on the selected projects. |
-| **Company Admin** | Every company project, the team, billing and project deletion. |
-| **Owner** | The person who created the company. Holds the subscription and has full access. |
+| What they can do | **Viewer** | **Member** | **Company Admin** |
+| --- | --- | --- | --- |
+| Projects they reach | The selected projects | The selected projects | Every company project |
+| Read results | Yes | Yes | Yes |
+| Keep their own [To-do list](/dashboard/todo) | Yes | Yes | Yes |
+| Connect an AI agent through the [MCP server](/integrations/mcp) | Yes | Yes | Yes |
+| Edit content, prompts, topics, competitors and tracking | No | Yes | Yes |
+| Invite and manage teammates | No | No | Yes |
+| Change billing and the plan | No | No | Yes |
+| Change a brand's time zone | No | No | Yes |
+| Connect Google Search Console or a Shopify store | No | No | Yes |
+| Delete projects | No | No | Yes |
 
-Some actions are for a **Company Admin** only, for example connecting Google Search Console or a Shopify store, changing a brand's time zone, and inviting or managing teammates.
+The **Owner** is the person who created the company. The owner holds the subscription and has full access.
 
-Every role, Viewers included, can keep their own [To-do list](/dashboard/todo) and connect an AI agent through the [MCP server](/integrations/mcp). The agent sees only the brands that person can see.
+An AI agent connected through the MCP server sees only the brands that person can see.
 
 ## Invite a teammate
 
@@ -70,14 +80,3 @@ Viewers and Members see only the people on their current project and cannot invi
 If you were invited, click **Leave company** in **Settings** > **Members**. You lose access to every project of that company; its projects and billing do not change. To come back, a Company Admin has to invite you again.
 
 The owner cannot leave. To hand the company over, the owner clicks **Request ownership transfer** to pick a Company Admin, or uses **Contact support to transfer ownership**.
-
-## Next
-
-<CardGroup cols={2}>
-  <Card title="Multiple brands" icon="layers" href="/setup/brands">
-    Add brands and choose who sees them.
-  </Card>
-  <Card title="Agency accounts" icon="briefcase" href="/setup/agencies">
-    Clients and pitches for agencies.
-  </Card>
-</CardGroup>

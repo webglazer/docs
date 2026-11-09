@@ -530,20 +530,9 @@ html[data-wg-hero] #page-title {
   font-weight: 400;
 }
 
-/* Tables: border-b border-border, px-3 py-2 */
-#content table {
-  font-size: 0.875rem;
-}
-
 #content th {
   color: var(--wg-ink);
   font-weight: 600;
-  border-bottom: 1px solid var(--wg-line);
-}
-
-#content td {
-  color: var(--wg-ink);
-  border-bottom: 1px solid rgb(229 229 229 / 0.6);
 }
 
 /* Steps: title in type-card-title, number on the zinc-100 surface */
@@ -713,10 +702,284 @@ html[data-wg-hero] #page-title {
   color: var(--wg-zinc-600);
 }
 
-/* ---------- Footer ---------- */
+/* ---------- Tables: the site's bordered card ---------- */
 
+/* Mintlify wraps each Markdown table in a scroll area ([data-table-wrapper])
+   that it widens by 2 x --page-padding and pads back in. Draw the card on that
+   wrapper at the column width, so wide tables (MCP tools) scroll inside the
+   rounded border. */
+#content [data-table-wrapper] {
+  --page-padding: 0px;
+  width: 100%;
+  margin: 1.5rem 0;
+  padding: 0;
+  border: 1px solid var(--wg-line);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+#content [data-table-wrapper] div:has(> table) {
+  padding: 0;
+}
+
+/* The default 150px cell minimum forces a scroll on 5 and 6 column tables
+   that fit the column. */
+#content [data-table-wrapper] td {
+  min-width: 6.5rem;
+}
+
+#content [data-table-wrapper] td:first-child {
+  min-width: 8rem;
+}
+
+/* Code in a table cell: a little smaller, and a name in the first column
+   (MCP tool names) never breaks mid-word. */
+#content td code {
+  font-size: 13px !important;
+}
+
+#content td:first-child > code {
+  white-space: nowrap;
+}
+
+#content table {
+  width: 100%;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+#content thead th {
+  background: #f5f5f5;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--wg-line);
+  text-align: left;
+  vertical-align: bottom;
+  font-size: 14px;
+}
+
+#content tbody td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--wg-line);
+  vertical-align: top;
+  color: var(--wg-zinc-600);
+}
+
+#content tbody td:first-child {
+  color: var(--wg-ink);
+  font-weight: 500;
+}
+
+#content tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+#content th + th,
+#content td + td {
+  border-left: 1px solid var(--wg-line);
+}
+
+/* ---------- Mermaid: neutral, on the card surface ---------- */
+
+#content .mermaid,
+#content [data-component-part="mermaid"],
+#content div:has(> svg[id^="mermaid"]) {
+  border: 1px solid var(--wg-line);
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  background: #fff;
+}
+
+/* Mermaid measures its labels before the prose rules above reach the <p>
+   inside each node, so those rules would clip the text. Hand the label back
+   to Mermaid's own size. */
+#content .mermaid {
+  display: flex;
+  justify-content: center;
+}
+
+#content .mermaid .node rect {
+  rx: 10px;
+  ry: 10px;
+}
+
+#content .mermaid p,
+#content .mermaid li {
+  margin: 0;
+  font-size: inherit;
+  line-height: 1.4;
+  color: inherit;
+}
+
+/* ---------- Page ending: Related topics, pagination, footer ----------
+   Copied from Mintlify's own docs (mintlify.com/docs/organize/navigation):
+   a small "Related topics" label over a list of page links with a page icon,
+   then two bordered cards, title on top and "Previous" / "Next" with a
+   chevron under it. Related topics has no id or data attribute; it is the
+   flex column right after #content whose links carry the Page icon. */
+
+#content-area > div.flex-col:has(> a > svg > use[href$="-Page"]),
+#content-area > #content + div.flex-col:has(> p:first-child + a) {
+  margin: 4rem 0 2rem;
+  gap: 0.125rem;
+}
+
+#content-area > div.flex-col:has(> a > svg > use[href$="-Page"]) > p,
+#content-area > #content + div.flex-col:has(> p:first-child + a) > p {
+  margin: 0 0 0.375rem;
+  padding: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #737373;
+}
+
+#content-area > div.flex-col:has(> a > svg > use[href$="-Page"]) > a,
+#content-area > #content + div.flex-col:has(> p:first-child + a) > a {
+  gap: 0.625rem;
+  padding: 0.375rem 0;
+  color: var(--wg-ink);
+  transition: color 0.15s;
+}
+
+#content-area > div.flex-col:has(> a > svg > use[href$="-Page"]) > a span,
+#content-area > #content + div.flex-col:has(> p:first-child + a) > a span {
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+#content-area > div.flex-col:has(> a > svg > use[href$="-Page"]) > a svg,
+#content-area > #content + div.flex-col:has(> p:first-child + a) > a svg {
+  color: #737373;
+}
+
+#content-area > div.flex-col:has(> a > svg > use[href$="-Page"]) > a:hover,
+#content-area > #content + div.flex-col:has(> p:first-child + a) > a:hover {
+  color: var(--wg-zinc-600);
+}
+
+/* Pagination. The mint theme renders each link as [chevron][title] (prev) or
+   [title][chevron] (next) with no label, so the label is drawn with ::after
+   and the three parts are placed on a 2-row grid. */
+#pagination {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+@media (min-width: 640px) {
+  #pagination {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #pagination > a[rel="next"] {
+    grid-column: 2;
+  }
+}
+
+#pagination > a {
+  display: grid;
+  align-items: center;
+  column-gap: 0.375rem;
+  row-gap: 0.25rem;
+  min-width: 0;
+  margin: 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--wg-line);
+  border-radius: 1rem;
+  background: #fff;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+#pagination > a:hover {
+  border-color: var(--wg-zinc-300);
+  background: var(--wg-zinc-50);
+}
+
+#pagination > a[rel="prev"] {
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "title title" "chev label";
+  justify-items: start;
+  text-align: left;
+}
+
+#pagination > a[rel="next"] {
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "title title" "label chev";
+  justify-items: end;
+  text-align: right;
+}
+
+#pagination [data-component-part="pagination-title"] {
+  grid-area: title;
+  max-width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--wg-ink) !important;
+}
+
+#pagination [data-component-part="pagination-chevron"] {
+  grid-area: chev;
+  height: 0.5rem;
+  stroke: #737373;
+}
+
+#pagination > a::after {
+  grid-area: label;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #737373;
+  transition: color 0.15s;
+}
+
+#pagination > a[rel="prev"]::after {
+  content: "Previous";
+}
+
+#pagination > a[rel="next"]::after {
+  content: "Next";
+}
+
+#pagination > a:hover::after {
+  color: var(--wg-zinc-600);
+}
+
+/* Footer: one quiet row, thin top rule, LinkedIn left, Powered by right */
 #footer {
-  border-top-color: var(--wg-line);
+  align-items: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+  border-top: 1px solid var(--wg-line);
+}
+
+#footer a[href*="linkedin"] svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  background-color: #737373 !important;
+  transition: background-color 0.15s;
+}
+
+#footer a[href*="linkedin"]:hover svg {
+  background-color: var(--wg-ink) !important;
+}
+
+#footer a[href*="mintlify.com"] {
+  font-size: 13px;
+  color: #737373;
+}
+
+#footer a[href*="mintlify.com"]:hover {
+  color: var(--wg-ink);
 }
 
 /* Mintlify Assistant is a Pro feature and is turned off for this project
