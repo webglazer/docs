@@ -1,0 +1,11 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.webglazer/webglazer",
+  "title": "WebGlazer",
+  "description": "AI search visibility: how ChatGPT, Gemini, Perplexity, Copilot and Google AI Mode see your brand.",
+  "version": "1.0.0",
+  "websiteUrl": "https://webglazer.com/docs/integrations/mcp",
+  "remotes": [
+    { "type": "streamable-http", "url": "https://webglazer-mcp-56836240603.europe-west1.run.app/mcp" }
+  ]
+}
