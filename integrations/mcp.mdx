@@ -254,7 +254,7 @@ Many tools accept the same optional period and filters:
 
 Every result repeats the period it applied, so your agent can tell you which dates the numbers cover.
 
-The product tools take `models` but not `topics` or `intents`. Their `scope` is `shopping` (the default: only answers that showed product cards) or `all` (every answer). Product tools work only on plans that include Products: Standard, Advanced, agency plans, and the Basic free trial. On a paid Basic plan they return "Product visibility is not included in this project's WebGlazer plan, so there is no product data to show." With no store connected, `list_products` returns an empty list and `get_product` says the project has no Shopify store connected. Connecting or disconnecting a store happens in the dashboard. See [Products](/dashboard/products) and [Plans and billing](/account/plans-and-billing).
+The product tools take `models` but not `topics` or `intents`. Their `scope` is `shopping` (the default: only answers that showed product cards) or `all` (every answer). Product tools work only on plans that include Products: Standard, Advanced and agency plans. On Basic, during the free trial or after, the connection and the other tools keep working, but the product tools return "Product visibility is not included in this project's WebGlazer plan, so there is no product data to show." With no store connected, `list_products` returns an empty list and `get_product` says the project has no Shopify store connected. Connecting or disconnecting a store happens in the dashboard. See [Products](/dashboard/products) and [Plans and billing](/account/plans-and-billing).
 
 ## Read and write access
 
@@ -310,7 +310,7 @@ You see and revoke only your own connections. If your WebGlazer account is delet
     WebGlazer could not check the brand's subscription at that moment. This is on WebGlazer's side. Wait a minute and ask again. If it keeps happening, email [support@webglazer.com](mailto:support@webglazer.com).
   </Accordion>
   <Accordion title={"\"Product visibility is not included in this project's WebGlazer plan\""}>
-    The brand's plan does not include Products. Products is part of Standard, Advanced and agency plans, and the Basic free trial. See [Plans and billing](/account/plans-and-billing).
+    The brand's plan does not include Products. Products is part of Standard, Advanced and agency plans. Basic does not include it, also during the free trial. See [Plans and billing](/account/plans-and-billing).
   </Accordion>
   <Accordion title='"This company is not active right now. Try again later."'>
     The company is temporarily locked, for example during an ownership transfer or a pending deletion. Try again later.
